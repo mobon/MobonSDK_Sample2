@@ -6,7 +6,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
-|1.0.3.60|미디에이션 안정화|
+|1.0.3.59|미디에이션 안정화|
 
 
 
@@ -43,7 +43,7 @@
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('com.mobon.sdk:com.mobon.sdk:1.0.3.60') {
+  implementation('com.mobon.sdk:com.mobon.sdk:1.0.3.59') {
         transitive = true
     }
 }
