@@ -253,7 +253,7 @@ private MobonSDK mMobonSDK;
     protected void onCreate(Bundle savedInstanceState) {
   ...
   //두번째 인자를 발급받은 미디어코드로 교체하세요.
-  mMobonSDK = new MobonSDK(activity,"Your_media_code"); 
+  mMobonSDK = new MobonSDK(this,"Your_media_code"); 
 
  //리스너를 생성합니다.
 mMobonSDK.setIMobonAdCallback(new iMobonAdCallback() {
