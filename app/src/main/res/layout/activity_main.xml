@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/txtMainTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"       
+        android:text="@string/main_title_text" />
+    
+
+
+ 
+    <Button
+        android:id="@+id/btnNextSub1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtMainTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="@string/sub_title_text"
+        android:visibility="visible"/>
+
+
+    <Button
+        android:id="@+id/btnNextSub3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnNextSub1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Mobon Json Ad data Sample"
+        android:visibility="visible"/>
+
+    <Button
+        android:id="@+id/btnNextSub4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnNextSub3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/sub_title_text4" />
+
+    <Button
+        android:id="@+id/btnNextSub5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnNextSub4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/sub_title_text5" />
+
+		 <!--<Button-->
+        <!--android:id="@+id/btnNextSub6"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/btnNextSub5"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:text="@string/sub_title_text6" />-->
+
+
+    <!--<com.mobon.sdk.RectBannerView-->
+        <!--xmlns:mobon="http://schemas.android.com/apk/res-auto"-->
+        <!--android:id="@+id/rect_banner_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--mobon:adType="BANNER_320x50"-->
+        <!--mobon:adBgColor="#ffffff"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--/>-->
+
+    <RelativeLayout
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true"/>
+
+
+</RelativeLayout>

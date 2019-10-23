@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">mobon_sdk_sample</string>
+    <string name="app_name1">MobonSDKActivity 샘플</string>
+    <string name="app_name2">MobonSDK 샘플</string>
+    <string name="app_name3">MobonSDK 콜백 샘플</string>
+    <string name="main_title_text">mobon_sdk_MainActivity</string>
+    <string name="sub_title_text">mobon Banner sample</string>
+    <string name="sub_title_text2">mobon_AdList</string>
+    <string name="sub_title_text3">mobonsdkActivity 비상속 샘플</string>
+    <string name="sub_title_text4">mobon 전면광고 샘플</string>
+    <string name="sub_title_text5">mobon NativeAdView 샘플</string>
+	<string name="sub_title_text6">mobon MCover 샘플</string>
+    <string name="main_sdk_title_text">mobon_sdk_MobonSDK</string>
+    <string name="main_callback_title_text">mobon_sdk_MobonSDK_Callback</string>
+    <string name="sub_callback_rectbanner_title_text">mobon_sdk_MobonSDK_RectBannerView_Callback</string>
+    <string name="btn_main_next_text">MobonSDK 예제 실행</string>
+    <string name="btn_sub_next_text">MobonSDK 띠배너 예제 실행</string>
+    <string name="btn_sub1_next_text">MobonSDK Callback 예제 실행</string>
+    <string name="btn_sub2_next_text">MobonSDK_RectBannerView_Callback 예제</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="title_section1">AD LIST</string>
+    <string name="title_section2">SHOP LIST</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+</resources>
