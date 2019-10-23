@@ -241,7 +241,76 @@ mEndingDialog.setAdListener(new iMobonEndingPopupCallback() {
 |FULL|device screen 100% |ENDING_TYPE.FULL|
 
 
-### 주의 사항
+## 광고 데이터(JSON) 호출
+ - 광고 데이터 호출 후 원하는 형태로 광고 뷰를 구현할 때 사용합니다.
+ - 광고 타입은 일반 광고와 타게팅 광고로 구분되어 있으니 샘플 프로젝트를 참고 하시어 두개의 레이아웃을 구성하여 주세요.
+ - 원활한 광고의 노출을 확인 및 클릭시 사이트 호출 기능이 제대로 동작하는지를 위하여 모비온 담당자의 검수가 필요합니다.
+ 
+ ```java
+private MobonSDK mMobonSDK;
+
+@Override
+    protected void onCreate(Bundle savedInstanceState) {
+  ...
+  //두번째 인자를 발급받은 미디어코드로 교체하세요.
+  mMobonSDK = new MobonSDK(activity,"Your_media_code"); 
+
+ //리스너를 생성합니다.
+mMobonSDK.setIMobonAdCallback(new iMobonAdCallback() {
+@Override
+public void onLoadedMobonAdData(boolean result, JSONObject objData, String errorStr) {
+if(result){
+         try {
+         JSONObject jObj = objData.getJSONArray("client").getJSONObject(0);
+         JSONArray jArray = jObj.getJSONArray("data");
+         int length = jObj.getInt("length");
+         String AdType = jObj.getString("target");
+         for (int i = 0; i < length; i++) {
+         AdItem item = new AdItem(AdType, jArray.getJSONObject(i));
+          //광고 데이터 처리...
+         }
+
+
+         } catch (JSONException e) {
+         // TODO Auto-generated catch block
+         e.printStackTrace();
+         }
+     }else{
+       if (errorStr.equals(Key.NOFILL)) {//광고 없음
+        } else {//통신 오류
+        }
+       }
+       }
+       });
+       
+ //두번째 인자 : 받을 광고의 개수 세번째 인자 : 발급받은 UnitId 로 교체하세요.
+   mMobonSDK.getMobonAdData(activity, 1, "unitId"); 
+
+
+```
+** sample Project 의 SampleJsonDataActivity 를 참조하세요.
+
+### 광고 데이터 Response parameter
+
+|name|type|description|
+|---|:---:|:---:|
+|client|string|MOBON에서 반환한 JSON 패킷 PREPIX|
+|target|string|광고 구분 : AD(베이스) 그외는 타게팅 광고|
+|length|int|광고 개수|
+|logo|string|광고 로고|
+|img_logo|string|광고 아이콘|
+|mobonLogo|string|Mobon 로고|
+|pcode|string|광고 상품코드|
+|pnm|string|상품 일 경우 상품명, 상품이 아닐 경우 광고명|
+|price|string|상품 일 경우 상품가격, 아닐경우 빈값|
+|img|string|대표 광고 이미지 url |
+|mimg_W_H|string|사이즈별 이미지 url, 비타게팅 광고일 경우만 넘어옴 |
+|purl|string|광고 landing url |
+|increaseViewKey|string|광고 노출키 |
+|site_desc|string|광고 소개글 |
+
+
+## 주의 사항
 
 - Proguard를 적용하는 경우 proguard configuration 파일 수정이 필요합니다.
 자세한 구현 내용은 샘플 프로젝트의 `proguard.cfg ` 파일 또는 [proguard-rules.pro](./MobonSDK_SampleProject/app/proguard-rules.pro) 참고해 주세요.
