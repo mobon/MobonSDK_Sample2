@@ -3,6 +3,14 @@
 모비온 SDK 를 이용하여 모비온 광고를 노출하는 방법을 제공하고 있습니다.  
 또한 기타 광고 플랫폼을 이용하여 미디에이션 기능을 사용하는 방법을 제공합니다.
 
+# Mobon Android SDK Release History
+ |version|Description|
+|---|:---:|
+|1.0.3.60|미디에이션 안정화|
+
+
+
+
 ## 개발환경
 - 최소 SDK Version : Android 14
 - Compile SDK : Android 26 이상
