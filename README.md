@@ -1,6 +1,6 @@
 # Mobon Android SDK
 
-모비온 SDK 를 이용하여 모비온 광고를 노출하는 방법을 제공하고 있습니다.
+모비온 SDK 를 이용하여 모비온 광고를 노출하는 방법을 제공하고 있습니다.  
 또한 기타 광고 플랫폼을 이용하여 미디에이션 기능을 사용하는 방법을 제공합니다.
 
 ## 개발환경
@@ -10,8 +10,8 @@
 
 ## 미디에이션 SDK 지원 목록
 
- 모비온 SDK 라이브러리 와 함께 Gradle 에 선언 만으로 사용가능하며, 추가 코드 수정없이 적용할 수 있도록 구성되었습니다.
- 필요로 하는 미디에이션 SDK 의 라이브러리만 선언하시면 됩니다.
+ 모비온 SDK 라이브러리 와 함께 Gradle 에 선언 만으로 사용가능하며, 추가 코드 수정없이 적용할 수 있도록 구성되었습니다.  
+ 필요로 하는 미디에이션 SDK 의 라이브러리만 선언하시면 됩니다.  
  되도록 최신버전을 유지바랍니다.
 
 |플랫폼|Gradle 추가|
@@ -99,7 +99,7 @@ rv.setAdListener(new iMobonBannerCallback() {
 |FILLx60|Horizontal Fill Banner|BannerType.BANNER_FIILx60|
 |CUSTOM SIZE|Layout Cunstom Banner|BannerType.BANNER_CUSTOM|
  
-** Custom Size 사용시에는 layout.xml 에서 width 와 height 값을 지정하셔야 합니다.
+** Custom Size 사용시에는 layout.xml 에서 width 와 height 값을 지정하셔야 합니다.  
     너무 다른 비율로 설정하시면 배너뷰의 레이아웃이 이상하게 나올 수 있습니다.
    
    
@@ -320,5 +320,5 @@ if(result){
 
 ## 주의 사항
 
-- Proguard를 적용하는 경우 proguard configuration 파일 수정이 필요합니다.
+- Proguard를 적용하는 경우 proguard configuration 파일 수정이 필요합니다.  
 자세한 구현 내용은 샘플 프로젝트의 `proguard.cfg ` 파일 또는 [proguard-rules.pro](./MobonSDK_SampleProject/app/proguard-rules.pro) 참고해 주세요.
