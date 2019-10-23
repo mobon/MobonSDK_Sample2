@@ -310,6 +310,14 @@ if(result){
 |site_desc|string|광고 소개글 |
 
 
+## 기타 옵션
+- setImageSizeLimit(int kb) : 광고 이미지의 용량을 제한합니다. 
+  (ex) insterstitial.setImageSizeLimit(500); //500kb 미만의 광고만 띄움.
+
+- setLog(boolean) : sdk의 로그가 보여집니다. default false
+  (ex) mobonSDK.setLog(true)
+
+
 ## 주의 사항
 
 - Proguard를 적용하는 경우 proguard configuration 파일 수정이 필요합니다.
