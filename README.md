@@ -1,0 +1,247 @@
+# Mobon Android SDK
+
+모비온 SDK 를 이용하여 모비온 광고를 노출하는 방법을 제공하고 있습니다.
+또한 기타 광고 플랫폼을 이용하여 미디에이션 기능을 사용하는 방법을 제공합니다.
+
+## 개발환경
+- 최소 SDK Version : Android 14
+- Compile SDK : Android 26 이상
+- Build Tool : Android Studio 
+
+## 미디에이션 SDK 지원 목록
+
+ 모비온 SDK 라이브러리 와 함께 Gradle 에 선언 만으로 사용가능하며, 추가 코드 수정없이 적용할 수 있도록 구성되었습니다.
+ 필요로 하는 미디에이션 SDK 의 라이브러리만 선언하시면 됩니다.
+ 되도록 최신버전을 유지바랍니다.
+
+|플랫폼|Gradle 추가|
+|---|:---:|
+|Adfit|implementation 'com.mobon.sdk:adapter-adfit:0.9.0.7'|
+
+** Adfit 추가 시 project 의 build.gradle 에 아래와 같이 주소가 추가되야 합니다.
+  ```java
+    repositories { 
+       ...
+       maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/'} // necessary for Adfit
+       ...
+    }
+    
+```
+   
+
+## 1. Mobon SDK 기본설정
+
+```XML
+dependencies {
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation('com.mobon.sdk:com.mobon.sdk:1.0.3.60') {
+        transitive = true
+    }
+}
+```
+
+## 2. Mobon SDK 선언
+
+```java
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    
+    new MobonSDK(this, "YOUR_MEDIA_CODE"); //두번째 인자에 발급받은 미디어코드로 수정하세요.
+    
+}
+
+```
+
+## 띠 배너 
+
+
+```java
+
+// 각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
+RectBannerView rv = new RectBannerView(this,BannerType.BANNER_320x50).setBannerUnitId(TEST_UNIT_ID);
+
+// 배너뷰의 리스너를 등록합니다.
+rv.setAdListener(new iMobonBannerCallback() {
+            @Override
+            public void onLoadedAdInfo(boolean result, String errorcode) {
+                if (result) {
+                    //배너 광고 로딩 성공
+                    System.out.println("배너 광고로딩");
+
+                } else {
+                
+                    System.out.println("광고실패 : " + errorcode);
+                }
+            }
+
+            @Override
+            public void onAdClicked() {
+                System.out.println("광고클릭");
+            }
+        });
+        
+       // 광고를 띄우고자 하는 layout 에 배너뷰를 삽입합니다.
+        banner_container.addView(rv);
+        
+        // 광고를 호출합니다.
+        rv.loadAd();
+
+```
+### 광고 사이즈별 띠 배너 타입
+ 
+ |Size in DP (W X H)|Description|AdType Constant|
+|---|:---:|:---:|
+|320x50|Standard Banner|BannerType.BANNER_320x50|
+|320x100|Large Banner|BannerType.BANNER_320x100|
+|300x250|Big Banner|BannerType.BANNER_300x250|
+|600x600|Biggest Banner|BannerType.BANNER_600x600|
+|FILLx60|Horizontal Fill Banner|BannerType.BANNER_FIILx60|
+|CUSTOM SIZE|Layout Cunstom Banner|BannerType.BANNER_CUSTOM|
+ 
+** Custom Size 사용시에는 layout.xml 에서 width 와 height 값을 지정하셔야 합니다.
+    너무 다른 비율로 설정하시면 배너뷰의 레이아웃이 이상하게 나올 수 있습니다.
+   
+   
+   
+## 전면 배너 
+
+
+```java
+
+//전면 배너를 선언하시고 발급받은 UnitId 로 교체하세요.
+InterstitialDialog interstitialDialog = new InterstitialDialog(this).setType(Key.INTERSTITIAL_TYPE.NORMAL).setUnitId(YOUR_UNIT_ID).build(); 
+ 
+ //전면 배너 리스너를 등록합니다.
+ interstitialDialog.setAdListener(new iMobonInterstitialAdCallback() {
+            @Override
+            public void onLoadedAdInfo(boolean result, final String errorStr) {
+                if (result) {
+                    //광고 성공     
+                } else {
+                    //광고 실패 
+                    System.out.println("onLoadedAdInfo fail" + errorStr);       
+                }
+            }
+            
+           @Override
+            public void onClickEvent(Key.INTERSTITIAL_KEYCODE event_code) {
+                if (event_code == Key.INTERSTITIAL_KEYCODE.CLOSE) {
+//                    if (interstitialDialog != null)
+//                        interstitialDialog.loadAd();
+                } else if (event_code == Key.INTERSTITIAL_KEYCODE.ADCLICK) {
+                    System.out.println("Interstitial Ad Click");
+                    if (interstitialDialog != null)
+                        interstitialDialog.close();
+                }
+            }
+
+            @Override
+            public void onOpened() {
+
+            }
+
+            @Override
+            public void onClosed() {
+
+            }
+        });  
+    
+    //광고를 호출합니다
+      interstitialDialog.loadAd();
+      
+    //전면 광고를 띄웁니다.
+       if(interstitialDialog.isLoaded())
+           interstitialDialog.show();
+      
+
+```
+    
+### 광고 사이즈별 전면 배너 타입
+ 
+ |Size|Description|AdType Constant|
+|---|:---:|:---:|
+|SMALL|250dp x 300dp|INTERSTITIAL_TYPE.SMALL|
+|NORMAL|device screen 70%|INTERSTITIAL_TYPE.NORMAL|
+|FULL|device screen 100% |INTERSTITIAL_TYPE.FULL|
+
+
+
+## 엔딩 배너 
+```java
+
+private EndingDialog mEndingDialog;
+
+ @Override
+    protected void onCreate(Bundle savedInstanceState) {
+  ...
+// 엔딩 배너를 선언하시고 발급받은 UnitId 로 교체하세요.
+ mEndingDialog = new EndingDialog(this).setType(Key.ENDING_TYPE.NORMAL).setUnitId(TEST_UNIT_ID).build(); 
+ //엔딩 배너의 리스너를 등록합니다.
+mEndingDialog.setAdListener(new iMobonEndingPopupCallback() {
+            @Override
+            public void onLoadedAdInfo(boolean result, String errorStr) {
+                if (result) {
+                    //광고 성공
+                } else {
+                    //광고 실패
+                }
+            }
+
+            @Override
+            public void onClickEvent(Key.ENDING_KEYCODE event_code) {
+                switch (event_code) {
+                    case CLOSE:
+                        //종료 클릭
+                        finish();
+                        break;
+                    case CANCLE:
+                        //닫기 클릭 또는 BackKey 시
+                        mEndingDialog.loadAd(); // 창 닫았을시 다시 로딩...
+                        break;
+                    case ADCLICK:
+                        //광고 클릭
+                        break;
+                }
+            }
+
+            @Override
+            public void onOpened() {
+
+            }
+
+            @Override
+            public void onClosed() {
+
+            }
+        });
+        //광고를 호출합니다
+        mEndingDialog.loadAd();
+        }
+        
+        
+        @Override
+    public void onBackPressed() {
+        if (mEndingDialog != null && !mEndingDialog.isShowing() && mEndingDialog.isLoaded()) {
+            mEndingDialog.show();
+            return;
+        } else {
+//                // 앱 종료 or 타 엔딩팝업 처리...
+        }
+        super.onBackPressed();
+    }
+        
+```
+
+### 광고 사이즈별 엔딩 배너 타입
+ 
+ |Size|Description|AdType Constant|
+|---|:---:|:---:|
+|NORMAL|device screen 60%|ENDING_TYPE.NORMAL|
+|FULL|device screen 100% |ENDING_TYPE.FULL|
+
+
+### 주의 사항
+
+- Proguard를 적용하는 경우 proguard configuration 파일 수정이 필요합니다.
+자세한 구현 내용은 샘플 프로젝트의 `proguard.cfg ` 파일 또는 [proguard-rules.pro](./adlibrTestProject/app/proguard-rules.pro) 참고해 주세요.
