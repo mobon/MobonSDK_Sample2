@@ -6,8 +6,8 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
+|1.0.3.64|특정상황에서 cpu 과부하 현상 수정|
 |1.0.3.59|미디에이션 안정화|
-
 
 
 
@@ -43,7 +43,7 @@
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('com.mobon.sdk:com.mobon.sdk:1.0.3.59') {
+  implementation('com.mobon.sdk:com.mobon.sdk:1.0.3.64') {
         transitive = true
     }
 }
@@ -96,6 +96,8 @@ rv.setAdListener(new iMobonBannerCallback() {
                 if (result) {
                     //배너 광고 로딩 성공
                     System.out.println("배너 광고로딩");
+                     // 광고를 띄우고자 하는 layout 에 배너뷰를 삽입합니다.
+                       banner_container.addView(rv);
 
                 } else {
                 
@@ -109,8 +111,7 @@ rv.setAdListener(new iMobonBannerCallback() {
             }
         });
         
-       // 광고를 띄우고자 하는 layout 에 배너뷰를 삽입합니다.
-        banner_container.addView(rv);
+      
         
         // 광고를 호출합니다.
         rv.loadAd();
@@ -124,7 +125,8 @@ rv.setAdListener(new iMobonBannerCallback() {
 |320x100|Large Banner|BannerType.BANNER_320x100|
 |300x250|Big Banner|BannerType.BANNER_300x250|
 |600x600|Biggest Banner|BannerType.BANNER_600x600|
-|FILLx60|Horizontal Fill Banner|BannerType.BANNER_FIILx60|
+|FILLx60|Horizontal Fill Banner(height 60) |BannerType.BANNER_FIILx60|
+|FILLx90|Horizontal Fill Banner(height 90) |BannerType.BANNER_FIILx90|
 |CUSTOM SIZE|Layout Cunstom Banner|BannerType.BANNER_CUSTOM|
  
 ** Custom Size 사용시에는 layout.xml 에서 width 와 height 값을 지정하셔야 합니다.  
