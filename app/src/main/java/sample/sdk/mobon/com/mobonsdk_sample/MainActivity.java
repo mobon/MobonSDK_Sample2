@@ -24,6 +24,7 @@ import com.mobon.sdk.callback.iMobonMCoverCallback;
 public class MainActivity extends Activity {
 
     private EndingDialog mEndingDialog;
+    private RelativeLayout banner_container;
     private String TEST_UNIT_ID = "18506"; // 모비온 테스트 UNIT_ID
 
     @Override
@@ -31,9 +32,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RelativeLayout banner_container = findViewById(R.id.banner_container);
+        banner_container = findViewById(R.id.banner_container);
 
-        new MobonSDK(this, "YOUR_MEDIA_CODE");
+        new MobonSDK(this, "YOUR_MEDIA_CODE"); // 발급받은 mediaCode로 교체바랍니다.
 
         Button btnNextSub1 = (Button) findViewById(R.id.btnNextSub1);
         btnNextSub1.setOnClickListener(new View.OnClickListener() {
@@ -118,23 +119,25 @@ public class MainActivity extends Activity {
         });
 
         mEndingDialog.loadAd();
-        RectBannerView rv = new RectBannerView(this).setBannerUnitId(TEST_UNIT_ID);
-        rv.setAdType(BannerType.BANNER_320x50);
+
+        final RectBannerView rv = new RectBannerView(this,BannerType.BANNER_320x50).setBannerUnitId(TEST_UNIT_ID);
+
         rv.setAdListener(new iMobonBannerCallback() {
             @Override
             public void onLoadedAdInfo(boolean result, String errorcode) {
                 if (result) {
                     //배너 광고 로딩 성공
                     System.out.println("배너 광고로딩");
-
+                    banner_container.addView(rv);
                 } else {
                     if (errorcode.equals(Key.NOFILL)) {
                         //광고 없음
                     } else {
                         //통신 오류
                     }
-                    System.out.println("광고실패 : " + errorcode);
+
                 }
+                System.out.println("광고실패 : " + errorcode);
             }
 
             @Override
@@ -143,8 +146,9 @@ public class MainActivity extends Activity {
             }
         });
 
-        banner_container.addView(rv);
+
         rv.loadAd();
+
     }
 
     @Override
@@ -157,18 +161,5 @@ public class MainActivity extends Activity {
         }
         super.onBackPressed();
     }
-
-//    @Override
-//    public boolean onKeyDown(int keyCode, KeyEvent event) {
-//        if (keyCode == KeyEvent.KEYCODE_BACK) {
-//            //엔딩팝업 광고 호출
-//            if (mEndingDialog != null && mEndingDialog.isLoaded()) {
-//                        mEndingDialog.show();
-//                return true;
-//            } else {
-//                // 앱 종료 or 타 엔딩팝업 처리...
-//            }
-//        }
-//        return super.onKeyDown(keyCode, event);
-//    }
+    
 }
