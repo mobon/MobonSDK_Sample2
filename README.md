@@ -347,9 +347,6 @@ if(result){
 - setImageSizeLimit(int kb) : 광고 이미지의 용량을 제한합니다.  
   (ex) insterstitial.setImageSizeLimit(500); //500kb 미만의 광고만 띄움.
 
-- setLog(boolean) : sdk의 로그가 보여집니다. default false  
-  (ex) mobonSDK.setLog(true)
-
 
 ## 주의 사항
 
