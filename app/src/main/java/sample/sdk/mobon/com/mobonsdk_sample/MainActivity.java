@@ -135,11 +135,10 @@ public class MainActivity extends Activity {
                     } else {
                         //통신 오류
                     }
-
-                }
-                 rv.destroyAd();
-                 rv = null;
-                System.out.println("광고실패 : " + errorcode);
+                    rv.destroyAd();
+                    rv = null;
+                    System.out.println("광고실패 : " + errorcode);
+                }                
             }
 
             @Override
