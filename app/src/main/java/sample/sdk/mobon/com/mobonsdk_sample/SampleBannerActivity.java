@@ -25,14 +25,14 @@ public class SampleBannerActivity extends Activity {
         bannerContainer = (LinearLayout) findViewById(R.id.banner_layout);
          rectBannerView = new RectBannerView(SampleBannerActivity.this, BannerType.BANNER_FILLx60).setBannerUnitId(TEST_UNIT_ID); //발급받은 UnitId 로 교체하세요.
         // rectBannerView.setBgColor("#ffffff"); // 비 선언시 배경 투명처리
-        rectBannerView.setInterval(60); // setInterval() 배너 광고 롤링시 (second)  비선언시 롤링 안함
-        bannerContainer.addView(rectBannerView);
+        rectBannerView.setInterval(60); // setInterval() 배너 광고 롤링시 (second)  비선언시 롤링 안함        
         rectBannerView.setAdListener(new iMobonBannerCallback() {
             @Override
             public void onLoadedAdInfo(boolean result, String errorStr) {
                 if (result) {
                     //광고 성공
                     System.out.println("성공");
+                    bannerContainer.addView(rectBannerView);
                 } else {
                     System.out.println("실패");
                     if (errorStr.equals(Key.NOFILL)) {
