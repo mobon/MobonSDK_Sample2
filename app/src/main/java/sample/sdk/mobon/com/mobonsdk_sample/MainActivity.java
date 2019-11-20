@@ -137,6 +137,8 @@ public class MainActivity extends Activity {
                     }
 
                 }
+                 rv.destroyAd();
+                 rv = null;
                 System.out.println("광고실패 : " + errorcode);
             }
 
