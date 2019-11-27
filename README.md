@@ -287,37 +287,36 @@ private MobonSDK mMobonSDK;
   ...
   //두번째 인자를 발급받은 미디어코드로 교체하세요.
   mMobonSDK = new MobonSDK(this,"Your_media_code"); 
-
- //리스너를 생성합니다.
-mMobonSDK.setIMobonAdCallback(new iMobonAdCallback() {
-@Override
-public void onLoadedMobonAdData(boolean result, JSONObject objData, String errorStr) {
-if(result){
-         try {
-         JSONObject jObj = objData.getJSONArray("client").getJSONObject(0);
-         JSONArray jArray = jObj.getJSONArray("data");
-         int length = jObj.getInt("length");
-         String AdType = jObj.getString("target");
-         for (int i = 0; i < length; i++) {
-         AdItem item = new AdItem(AdType, jArray.getJSONObject(i));
-          //광고 데이터 처리...
-         }
-
-
-         } catch (JSONException e) {
-         // TODO Auto-generated catch block
-         e.printStackTrace();
-         }
-     }else{
-       if (errorStr.equals(Key.NOFILL)) {//광고 없음
-        } else {//통신 오류
-        }
-       }
-       }
-       });
        
- //두번째 인자 : 받을 광고의 개수 세번째 인자 : 발급받은 UnitId 로 교체하세요.
-   mMobonSDK.getMobonAdData(activity, 1, "unitId"); 
+ //두번째 인자 : 받을 광고의 개수 
+ //세번째 인자 : 발급받은 UnitId 로 교체하세요.
+ //네번째 인자 : 광고 호출 callback Listener
+   mMobonSDK.getMobonAdData(activity, 1, "unitId",new iMobonAdCallback() {
+      @Override
+      public void onLoadedMobonAdData(boolean result, JSONObject objData, String errorStr) {
+           if(result){
+                    try {
+                    JSONObject jObj = objData.getJSONArray("client").getJSONObject(0);
+                    JSONArray jArray = jObj.getJSONArray("data");
+                    int length = jObj.getInt("length");
+                    String AdType = jObj.getString("target");
+                    for (int i = 0; i < length; i++) {
+                    AdItem item = new AdItem(AdType, jArray.getJSONObject(i));
+                     //광고 데이터 처리...
+                    }
+
+
+                    } catch (JSONException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                    }
+                }else{
+                  if (errorStr.equals(Key.NOFILL)) {//광고 없음
+                   } else {//통신 오류
+                   }
+                  }
+             }
+       }); 
 
 
 ```
