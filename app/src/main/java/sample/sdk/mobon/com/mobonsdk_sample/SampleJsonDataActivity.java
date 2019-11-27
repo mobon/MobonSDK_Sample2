@@ -47,8 +47,8 @@ public class SampleJsonDataActivity extends Activity {
         mListView = (ListView) findViewById(R.id.list);
         mAdapter = new MainAdapter(this, arrayList);
         mListView.setAdapter(mAdapter);
-
-        mMobonSDK.setIMobonAdCallback(new iMobonAdCallback() {
+        
+        mMobonSDK.getMobonAdData(this, 1, TEST_UNIT_ID, new iMobonAdCallback() {
 
             @Override
             public void onLoadedMobonAdData(boolean result, JSONObject objData, String errorStr) {
@@ -83,8 +83,7 @@ public class SampleJsonDataActivity extends Activity {
                 }
             }
 
-        });
-        mMobonSDK.getMobonAdData(this, 1, TEST_UNIT_ID); //두번째 인자 : 받을 광고의 갯수, 세번쟤 인자 : 발급받은 UnitId 로 교체하세요.
+        }); //두번째 인자 : 받을 광고의 갯수, 세번쟤 인자 : 발급받은 UnitId 로 교체하세요. 
 
     }
 
@@ -139,10 +138,7 @@ public class SampleJsonDataActivity extends Activity {
             } else {
                 Glide.with(SampleJsonDataActivity.this).load(data.imgUrl).diskCacheStrategy(DiskCacheStrategy.SOURCE).into(wrapper.mThumbNail);
             }
-            //노출 카운트
-            if (arrayList.size() == 1)  // 한개의 광고 데이터시에는 인자없이 넘겨도 처리됨
-                mMobonSDK.onImpression();
-            else
+            //노출 카운트(##필수##)           
                 mMobonSDK.onImpression(data.viewKey);
 
             convertView.setOnClickListener(new View.OnClickListener() {
