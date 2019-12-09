@@ -24,7 +24,7 @@
  필요로 하는 미디에이션 SDK 의 라이브러리만 선언하시면 됩니다.
  되도록 최신버전을 유지바랍니다.
 
-|플랫폼|Gradle 추가|
+|플랫폼|Gradle 추가|연동가이드|
 |---|:---:|:---:|
 |Adfit|implementation 'com.mobon.sdk:adapter-adfit:0.9.0.7'|[연동가이드](adfit.md)|
 |Admixer|implementation 'com.mobon.sdk:adapter-admixer:0.9.1.0'|[연동가이드](admixer.md)|
