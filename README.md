@@ -6,7 +6,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
-|1.0.3.71|Admixer 미디에이션 추가|
+|1.0.3.72|Admixer 미디에이션 추가|
 |1.0.3.66|특정상황에서 cpu 과부하 현상 수정|
 |1.0.3.59|미디에이션 안정화|
 
