@@ -16,8 +16,9 @@
 **  App 의 build.gradle 에 아래와 같이 주소가 추가되야 합니다.
  ```XML
 dependencies {
-  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  ...
   implementation 'com.mobon.sdk:adapter-admixer:0.9.1.0'
+  ...
 }
 ```
    
