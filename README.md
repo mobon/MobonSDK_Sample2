@@ -6,6 +6,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
+|1.0.3.71|Admixer 미디에이션 추가|
 |1.0.3.66|특정상황에서 cpu 과부하 현상 수정|
 |1.0.3.59|미디에이션 안정화|
 
@@ -24,8 +25,9 @@
  되도록 최신버전을 유지바랍니다.
 
 |플랫폼|Gradle 추가|
-|---|:---:|
-|Adfit|implementation 'com.mobon.sdk:adapter-adfit:0.9.0.7'|
+|---|:---:|:---:|
+|Adfit|implementation 'com.mobon.sdk:adapter-adfit:0.9.0.7'|[연동가이드](https://google.com)|
+|Admixer|implementation 'com.mobon.sdk:adapter-admixer:0.9.1.0'|[연동가이드](https://google.com)|
 
 ** Adfit 추가 시 project 의 build.gradle 에 아래와 같이 주소가 추가되야 합니다.
   ```java
