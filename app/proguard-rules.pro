@@ -33,3 +33,4 @@
 -keep class **$$AdfitAdapter { *; }
 -keep class com.mobon.adfit_sdk.** { *; }
 -keep class com.kakao.adfit.** { *; }
+-keep class com.admixer.** { *; }
