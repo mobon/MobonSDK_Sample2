@@ -22,15 +22,8 @@
 -dontwarn com.imgmodule.**
 -keep class com.httpmodule.** { *; }
 -keep class com.imgmodule.** { *; }
--dontwarn com.mobon.adfit_sdk.**
 -keep public class com.mobon.**{
  public *;
 }
--keepclasseswithmembernames class * {
-    @com.mobon.adfit_sdk.* <fields>;
-}
--keepnames class * { @com.mobon.adfit_sdk.AdfitAdater *;}
--keep class **$$AdfitAdapter { *; }
--keep class com.mobon.adfit_sdk.** { *; }
 -keep class com.kakao.adfit.** { *; }
 -keep class com.admixer.** { *; }
