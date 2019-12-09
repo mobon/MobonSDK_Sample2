@@ -26,7 +26,7 @@
 
 |플랫폼|Gradle 추가|
 |---|:---:|:---:|
-|Adfit|implementation 'com.mobon.sdk:adapter-adfit:0.9.0.7'|[연동가이드](https://google.com)|
+|Adfit|implementation 'com.mobon.sdk:adapter-adfit:0.9.0.7'|[연동가이드](adfit.md)|
 |Admixer|implementation 'com.mobon.sdk:adapter-admixer:0.9.1.0'|[연동가이드](https://google.com)|
 
 ** Adfit 추가 시 project 의 build.gradle 에 아래와 같이 주소가 추가되야 합니다.
