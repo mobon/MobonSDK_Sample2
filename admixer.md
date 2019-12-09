@@ -17,9 +17,7 @@
  ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation ('com.mobon.sdk:adapter-admixer:0.9.1.0',{
-        exclude group: 'com.google.android.gms'
-    })
+  implementation 'com.mobon.sdk:adapter-admixer:0.9.1.0'
 }
 ```
    
