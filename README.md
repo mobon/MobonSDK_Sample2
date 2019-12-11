@@ -6,7 +6,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
-|1.0.3.72|Admixer 미디에이션 추가|
+|1.0.3.73|Admixer 미디에이션 추가|
 |1.0.3.66|특정상황에서 cpu 과부하 현상 수정|
 |1.0.3.59|미디에이션 안정화|
 
@@ -35,7 +35,7 @@
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('com.mobon.sdk:com.mobon.sdk:1.0.3.72') {
+  implementation('com.mobon.sdk:com.mobon.sdk:1.0.3.73') {
         transitive = true
     }
 }
