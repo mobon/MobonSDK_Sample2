@@ -24,5 +24,11 @@ dependencies {
    
 **  Progaurd 난독화 시 아래와 같이 예외 처리합니다.
  ```java
+ -keep class com.httpmodule.** { *; }
+-keep class com.imgmodule.** { *; }
+-keep public class com.mobon.**{
+ public *;
+}
+
 -keep class com.admixer.** { *; }
 ```
