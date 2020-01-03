@@ -6,6 +6,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
+|1.0.4.0|Criteo 미디에이션 추가|
 |1.0.3.75|Admixer 미디에이션 추가|
 |1.0.3.66|특정상황에서 cpu 과부하 현상 수정|
 |1.0.3.59|미디에이션 안정화|
@@ -28,6 +29,7 @@
 |---|:---:|:---:|
 |Adfit|implementation 'com.mobon.sdk:adapter-adfit:0.9.0.7'|[연동가이드](adfit.md)|
 |Admixer|implementation 'com.mobon.sdk:adapter-admixer:0.9.2.1'|[연동가이드](admixer.md)|
+|Criteo|implementation 'com.mobon.sdk:adapter-criteo:0.9.0.8'|[연동가이드](criteo.md)|
  
  
 ## 1. Mobon SDK 기본설정
@@ -35,7 +37,7 @@
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('com.mobon.sdk:com.mobon.sdk:1.0.3.73') {
+  implementation('com.mobon.sdk:com.mobon.sdk:1.0.4.0') {
         transitive = true
     }
 }
