@@ -10,7 +10,7 @@
 
 |지원 광고 타입|
 |---:|
-|Banner 320x50|
+|Banner 320x50,320x50|
 |Interstital|
 |Ending|
 
