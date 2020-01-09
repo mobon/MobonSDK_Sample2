@@ -8,10 +8,10 @@
 - Build Tool : Android Studio 
 - Application Context 를 요구
 
-|지원 광고 타입|-|
-|---|:---:|
-|Banner 320x50|interstital|
-
+|지원 광고 타입|
+|---:|
+|Banner 320x50|
+|interstital|
 
 **  App 의 build.gradle 에 아래와 같이 주소가 추가되야 합니다.
  ```XML
