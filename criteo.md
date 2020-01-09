@@ -9,7 +9,7 @@
 - Application Context 를 요구
 
   |지원 광고 타입|-|
-|---|:---:|:---:|
+|---|:---:|
 |Banner 320x50|interstital|
 
 
