@@ -8,9 +8,9 @@
 - Build Tool : Android Studio 
 - Application Context 를 요구
 
- 모비온 SDK 라이브러리 와 함께 Gradle 에 선언 만으로 사용가능하며,  
- 추가 코드 수정없이 적용할 수 있도록 구성되었습니다.  
- 되도록 최신버전을 유지바랍니다. 
+  |지원 광고 타입|-|
+|---|:---:|:---:|
+|Banner 320x50|interstital|
 
 
 **  App 의 build.gradle 에 아래와 같이 주소가 추가되야 합니다.
