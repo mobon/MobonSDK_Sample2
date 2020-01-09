@@ -13,5 +13,5 @@ package sample.sdk.mobon.com.mobonsdk_sample;
 //}
 
 public class Application{
-
+  MobonSDK.init(this); //criteo 미디에이션 사용시 선언
 }
