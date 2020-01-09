@@ -8,9 +8,11 @@
 - Build Tool : Android Studio 
 - Activity Context 를 요구
 
- |지원 광고 타입|-|-|
-|---|:---:|:---:|
-|Banner 320x50|interstital|ending|
+|지원 광고 타입|
+|---:|
+|Banner 320x50|
+|Interstital|
+|Ending|
 
 
 **  App 의 build.gradle 에 아래와 같이 주소가 추가되야 합니다.
