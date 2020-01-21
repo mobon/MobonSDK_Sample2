@@ -35,6 +35,17 @@ public class MyApplication extends Application {
     }
 }
 ```
+
+**  App 의 Application 에서 어려울시 MainActivity 에서 초기화 방법입니다.
+ ```java
+public class MainActivity extends Activity {
+    @Override
+     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        MobonSDK.init(this.getApplication());
+    }
+}
+```
    
 **  Progaurd 난독화 시 아래와 같이 예외 처리합니다.
  ```java
