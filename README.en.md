@@ -76,7 +76,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 ```
 
-## Bar Banner 
+## Banner 
 
 
 ```java
@@ -115,7 +115,7 @@ rv.setAdListener(new iMobonBannerCallback() {
         rv.loadAd();
 
 ```
-### Type of Bar Banner sizes
+### Type of Banner sizes
  
  |Size in DP (W X H)|Description|AdType Constant|
 |---|:---:|:---:|
@@ -132,7 +132,7 @@ rv.setAdListener(new iMobonBannerCallback() {
    
    
    
-## Interstitial Banner (Intro)
+## Interstitial
 
 
 ```java
@@ -185,7 +185,7 @@ InterstitialDialog interstitialDialog = new InterstitialDialog(this).setType(Key
 
 ```
     
-### Type of Interstitial Intro Banner sizes
+### Type of Interstitial sizes
  
  |Size|Description|AdType Constant|
 |---|:---:|:---:|
@@ -195,7 +195,7 @@ InterstitialDialog interstitialDialog = new InterstitialDialog(this).setType(Key
 
 
 
-## Interstitial Banner (Ending) 
+## Ending (app Close Popup)
 ```java
 
 private EndingDialog mEndingDialog;
@@ -261,7 +261,7 @@ mEndingDialog.setAdListener(new iMobonEndingPopupCallback() {
         
 ```
 
-### Type of Interstitial Ending Banner sizes
+### Type of Ending sizes
  
  |Size|Description|AdType Constant|
 |---|:---:|:---:|
