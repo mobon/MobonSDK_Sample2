@@ -3,7 +3,7 @@
  미디에이션 기능을 사용하는 방법을 제공합니다.
 
 ## 개발환경
-- 최소 SDK Version : Android 19
+- 최소 SDK Version : Android 18
 - Compile SDK : Android 26 이상
 - Build Tool : Android Studio 
 - Application Context 를 요구
@@ -19,7 +19,7 @@ dependencies {
   ...
   implementation 'com.google.android.gms:play-services-ads-identifier:16.0.0'
   implementation 'com.google.android.gms:play-services-base:16.0.1'
-  implementation 'com.mobon.sdk:adapter-criteo:0.9.0.8'
+  implementation 'com.mobon.sdk:adapter-criteo:0.9.0.9'
   ...
 }
 ```
