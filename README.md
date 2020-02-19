@@ -339,6 +339,9 @@ private MobonSDK mMobonSDK;
 ## 기타 옵션
 - setImageSizeLimit(int kb) : 광고 이미지의 용량을 제한합니다.  
   (ex) insterstitial.setImageSizeLimit(500); //500kb 미만의 광고만 띄움.
+  
+  - setExtractColor(boolean is) : 배너 광고의 배경색상을 소재에 맞게 변경합니다.(기본값 true)
+  (ex) rectbanner.setExtractColor(false); //배경색상 변경 안함.
 
 
 ## 주의 사항
