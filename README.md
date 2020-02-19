@@ -6,6 +6,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
+|1.0.4.1|RectBannerView setExtractColor 속성 추가|
 |1.0.4.0|Criteo 미디에이션 추가|
 |1.0.3.75|Admixer 미디에이션 추가|
 |1.0.3.66|특정상황에서 cpu 과부하 현상 수정|
@@ -28,7 +29,7 @@
 |플랫폼|LATEST SDK VERSION|가이드|
 |---|:---:|:---:|
 |Adfit|implementation 'com.mobon.sdk:adapter-adfit:0.9.0.7'|[연동가이드](adfit.md)|
-|Admixer|implementation 'com.mobon.sdk:adapter-admixer:0.9.2.1'|[연동가이드](admixer.md)|
+|Admixer|implementation 'com.mobon.sdk:adapter-admixer:0.9.2.4'|[연동가이드](admixer.md)|
 |Criteo|implementation 'com.mobon.sdk:adapter-criteo:0.9.0.9'|[연동가이드](criteo.md)|
  
  
@@ -37,7 +38,7 @@
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('com.mobon.sdk:com.mobon.sdk:1.0.4.0') {
+  implementation('com.mobon.sdk:com.mobon.sdk:1.0.4.1') {
         transitive = true
     }
 }
