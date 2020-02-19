@@ -6,7 +6,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
-|1.0.4.1|RectBannerView setExtractColor 속성 추가|
+|1.0.4.2|RectBannerView setExtractColor(),setOrderBrowser() 추가|
 |1.0.4.0|Criteo 미디에이션 추가|
 |1.0.3.75|Admixer 미디에이션 추가|
 |1.0.3.66|특정상황에서 cpu 과부하 현상 수정|
@@ -38,7 +38,7 @@
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('com.mobon.sdk:com.mobon.sdk:1.0.4.1') {
+  implementation('com.mobon.sdk:com.mobon.sdk:1.0.4.2') {
         transitive = true
     }
 }
@@ -343,6 +343,9 @@ private MobonSDK mMobonSDK;
   
   - setExtractColor(boolean is) : 배너 광고의 배경색상을 소재에 맞게 변경합니다.(기본값 true)
   (ex) rectbanner.setExtractColor(false); //배경색상 변경 안함.
+  
+  - setOrderBrowser(List<string>) : 광고 클릭시 호출되는 브라우저의 순서를 정할 수 있습니다.
+  (ex) mobonSDK.setOrderBrowser(Arrays.asList("com.sec.android.app.sbrowser", "com.android.chrome")); //1순위 삼성브라우저, 2순위 크롬
 
 
 ## 주의 사항
