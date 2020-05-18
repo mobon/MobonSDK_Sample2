@@ -28,9 +28,9 @@
 
 |플랫폼|LATEST SDK VERSION|가이드|
 |---|:---:|:---:|
-|Adfit|implementation 'com.mobon.sdk:adapter-adfit:0.9.0.7'|[연동가이드](adfit.md)|
-|Admixer|implementation 'com.mobon.sdk:adapter-admixer:0.9.2.5'|[연동가이드](admixer.md)|
-|Criteo|implementation 'com.mobon.sdk:adapter-criteo:0.9.0.9'|[연동가이드](criteo.md)|
+|Adfit|implementation 'com.mobon.sdk:adapter-adfit:0.9.0.10'|[연동가이드](adfit.md)|
+|Admixer|implementation 'com.mobon.sdk:adapter-admixer:0.9.2.6'|[연동가이드](admixer.md)|
+|Criteo|implementation 'com.mobon.sdk:adapter-criteo:0.9.0.10'|[연동가이드](criteo.md)|
  
  
 ## 1. Mobon SDK 기본설정
