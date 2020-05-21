@@ -6,6 +6,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
+|1.0.4.9|Bacon 배너 추가|
 |1.0.4.6|RectBannerView setExtractColor(),setOrderBrowser() 추가|
 |1.0.4.0|Criteo 미디에이션 추가|
 |1.0.3.75|Admixer 미디에이션 추가|
@@ -38,7 +39,7 @@
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('com.mobon.sdk:com.mobon.sdk:1.0.4.6') {
+  implementation('com.mobon.sdk:com.mobon.sdk:1.0.4.9') {
         transitive = true
     }
 }
@@ -115,7 +116,49 @@ rv.setAdListener(new iMobonBannerCallback() {
         rv.loadAd();
 
 ```
-### 광고 사이즈별 띠 배너 타입
+
+##바콘 띠 배너 
+
+** 바콘 배너에 대해
+ - 배너를 클릭시 광고 사이트로 이동하며 바로가기를 추가적으로 설치를 유도합니다. 
+   유저의 바로가기 추가로 인해 앱 사용시가 아니더라도 지속적인 수익창출이 가능합니다.
+
+```java
+
+LinearLayout banner_container = findViewById(R.id.banner_container);
+// 발급받은 BACON 용 UNIT_ID 값을 필수로 넣어주어야 합니다.
+RectBannerView rv = new RectBannerView(this,BannerType.BANNER_320x50).setBannerUnitId(BACON_UNIT_ID); 
+
+// 배너뷰의 리스너를 등록합니다.
+rv.setAdListener(new iMobonBannerCallback() {
+            @Override
+            public void onLoadedAdInfo(boolean result, String errorcode) {
+                if (result) {
+                    //배너 광고 로딩 성공
+                    System.out.println("바콘배너 광고로딩");
+                     // 광고를 띄우고자 하는 layout 에 배너뷰를 삽입합니다.
+                       banner_container.addView(rv);
+
+                } else {
+                
+                    System.out.println("광고실패 : " + errorcode);
+                    rv.destroyAd();
+                    rv = null;
+                }
+            }
+
+            @Override
+            public void onAdClicked() {
+                System.out.println("광고클릭");
+            }
+        });       
+        
+        // 광고를 호출합니다.
+        rv.loadBaconAd();
+
+```
+
+###배너 광고 사이즈별 타입
  
  |Size in DP (W X H)|Description|AdType Constant|
 |---|:---:|:---:|
@@ -129,8 +172,8 @@ rv.setAdListener(new iMobonBannerCallback() {
  
 ** Custom Size 사용시에는 layout.xml 에서 width 와 height 값을 지정하셔야 합니다.  
     너무 다른 비율로 설정하시면 배너뷰의 레이아웃이 이상하게 나올 수 있습니다.
-   
-   
+    
+    
    
 ## 전면 배너 
 
@@ -185,7 +228,7 @@ InterstitialDialog interstitialDialog = new InterstitialDialog(this).setType(Key
 
 ```
     
-### 광고 사이즈별 전면 배너 타입
+### 전면 배너광고 사이즈별 타입
  
  |Size|Description|AdType Constant|
 |---|:---:|:---:|
@@ -261,7 +304,7 @@ mEndingDialog.setAdListener(new iMobonEndingPopupCallback() {
         
 ```
 
-### 광고 사이즈별 엔딩 배너 타입
+### 엔딩 배너 광고 사이즈별 타입
  
  |Size|Description|AdType Constant|
 |---|:---:|:---:|
