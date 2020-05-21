@@ -70,7 +70,7 @@ public class SampleBannerActivity extends Activity {
                 if (result) {
                     //배너 광고 로딩 성공
                     System.out.println("바콘 광고로딩!!!!!");
-                    banner_container.addView(baconBannerView);
+                    bannerContainer.addView(baconBannerView);
                 } else {
                     if (errorcode.equals(Key.NOFILL)) {
                         //광고 없음
