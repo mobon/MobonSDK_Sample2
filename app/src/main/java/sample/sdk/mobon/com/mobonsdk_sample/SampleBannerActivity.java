@@ -63,7 +63,7 @@ public class SampleBannerActivity extends Activity {
     
      private void showBaconBanner(){
 
-        final RectBannerView baconBannerView = new RectBannerView(this, BannerType.BANNER_FILLx90).setBannerUnitId("373386"); //바콘용 UnitId 를 넣으셔야 합니다.
+        final RectBannerView baconBannerView = new RectBannerView(this, BannerType.BANNER_FILLx90).setBannerUnitId(TEST_BACON_UNIT_ID); //바콘용 UnitId 를 넣으셔야 합니다.
         baconBannerView.setAdListener(new iMobonBannerCallback() {
             @Override
             public void onLoadedAdInfo(boolean result, String errorcode) {
