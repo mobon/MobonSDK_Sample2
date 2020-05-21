@@ -17,6 +17,7 @@ public class SampleBannerActivity extends Activity {
     private RectBannerView rectBannerView;
     private LinearLayout bannerContainer;
     private String TEST_UNIT_ID = "18506"; // 모비온 테스트 UNIT_ID
+    private String TEST_BACON_UNIT_ID = "373386"; // 모비온 테스트 바콘 UNIT_ID
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,10 @@ public class SampleBannerActivity extends Activity {
                     if (rectBannerView != null)
                         rectBannerView.destroyAd();
                     rectBannerView = null;
+                    
+                    /////////////////////////////////////
+                    showBaconBanner(); // 바콘 배너 광고 진행시에만 호출바랍니다.
+                    /////////////////////////////////////
                 }
             }
 
@@ -53,6 +58,37 @@ public class SampleBannerActivity extends Activity {
             }
         });
         rectBannerView.loadAd();
+    }
+    
+    
+     private void showBaconBanner(){
+
+        final RectBannerView baconBannerView = new RectBannerView(this, BannerType.BANNER_FILLx90).setBannerUnitId("373386"); //바콘용 UnitId 를 넣으셔야 합니다.
+        baconBannerView.setAdListener(new iMobonBannerCallback() {
+            @Override
+            public void onLoadedAdInfo(boolean result, String errorcode) {
+                if (result) {
+                    //배너 광고 로딩 성공
+                    System.out.println("바콘 광고로딩!!!!!");
+                    banner_container.addView(baconBannerView);
+                } else {
+                    if (errorcode.equals(Key.NOFILL)) {
+                        //광고 없음
+                    } else {
+                        //통신 오류
+                    }
+                    System.out.println("바콘 광고실패 : " + errorcode);
+                    baconBannerView.destroyAd();
+                }
+            }
+
+            @Override
+            public void onAdClicked() {
+                System.out.println("바콘 광고클릭 : ");
+            }
+        });
+
+        baconBannerView.loadBaconAd(); // loadAd()가 아닌 loadBaconAD() 입니다.
     }
 
 }
