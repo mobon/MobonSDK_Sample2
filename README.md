@@ -117,7 +117,7 @@ rv.setAdListener(new iMobonBannerCallback() {
 
 ```
 
-##바콘 띠 배너 
+##바콘(바탕화면 아이콘) 띠 배너 
 
 ** 바콘 배너에 대해
  - 배너를 클릭시 광고 사이트로 이동하며 바로가기를 추가적으로 설치를 유도합니다. 
@@ -227,7 +227,59 @@ InterstitialDialog interstitialDialog = new InterstitialDialog(this).setType(Key
       
 
 ```
+
+##바콘 전면 배너 
+
+```java
+
+LinearLayout banner_container = findViewById(R.id.banner_container);
+// 발급받은 BACON 용 UNIT_ID 값을 필수로 넣어주어야 합니다.
+InterstitialDialog interstitialDialog = new InterstitialDialog(this).setType(Key.INTERSTITIAL_TYPE.NORMAL).setUnitId(BACON_UNIT_ID).build(); 
+
+ //전면 배너 리스너를 등록합니다.
+ interstitialDialog.setAdListener(new iMobonInterstitialAdCallback() {
+            @Override
+            public void onLoadedAdInfo(boolean result, final String errorStr) {
+                if (result) {
+                    //광고 성공     
+                } else {
+                    //광고 실패 
+                    System.out.println("onLoadedAdInfo fail" + errorStr);       
+                }
+            }
+            
+           @Override
+            public void onClickEvent(Key.INTERSTITIAL_KEYCODE event_code) {
+                if (event_code == Key.INTERSTITIAL_KEYCODE.CLOSE) {
+//                    if (interstitialDialog != null)
+//                        interstitialDialog.loadAd();
+                } else if (event_code == Key.INTERSTITIAL_KEYCODE.ADCLICK) {
+                    System.out.println("Interstitial Ad Click");
+                    if (interstitialDialog != null)
+                        interstitialDialog.close();
+                }
+            }
+
+            @Override
+            public void onOpened() {
+
+            }
+
+            @Override
+            public void onClosed() {
+
+            }
+        });  
     
+    ///바콘 광고를 호출합니다
+      interstitialDialog.loadBaconAd();
+      
+    //전면 광고를 띄웁니다.
+       if(interstitialDialog.isLoaded())
+           interstitialDialog.show();
+
+```
+
 ### 전면 배너광고 사이즈별 타입
  
  |Size|Description|AdType Constant|
