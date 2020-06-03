@@ -80,6 +80,8 @@ public class SampleInterstitialActivity extends Activity {
                     } else {
                         //기타 오류
                     }
+                    //바콘 광고를 추가로 하실 경우 실행하시기 바랍니다.
+                    // showBaconBanner();
                 }
             }
 
@@ -111,5 +113,65 @@ public class SampleInterstitialActivity extends Activity {
     protected void onPause() {
         super.onPause();
 
+    }
+    
+    private void showBaconBanner(){
+        final InterstitialDialog interstitialDialog = new InterstitialDialog(this).setType(Key.INTERSTITIAL_TYPE.NORMAL).setUnitId(BACON_UNIT_ID).build(); //발급받은 BACON 용 UnitId 로 교체하세요.
+       
+        //callback
+        interstitialDialog.setAdListener(new iMobonInterstitialAdCallback() {
+            @Override
+            public void onLoadedAdInfo(boolean result, final String errorStr) {
+                if (result) {
+                    //광고 성공
+                    System.out.println("onLoadedAdInfo success");
+                    new Handler(Looper.getMainLooper()).post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(SampleInterstitialActivity.this, "Load Success", Toast.LENGTH_SHORT).show();
+                            interstitialDialog.show();
+                        }
+                    });
+
+                } else {
+                    System.out.println("onLoadedAdInfo fail" + errorStr);
+                    new Handler(Looper.getMainLooper()).post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(SampleInterstitialActivity.this, "Load fail : " + errorStr, Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    if (errorStr.equals(Key.NOFILL)) {
+                        //광고 없음
+                    } else {
+                        //기타 오류
+                    }
+                }
+            }
+
+            @Override
+            public void onClickEvent(Key.INTERSTITIAL_KEYCODE event_code) {
+                if (event_code == Key.INTERSTITIAL_KEYCODE.CLOSE) {
+                    
+                } else if (event_code == Key.INTERSTITIAL_KEYCODE.ADCLICK) {
+                    System.out.println("Interstitial Ad Click");
+                    if (interstitialDialog != null)
+                        interstitialDialog.close();
+                }
+            }
+
+            @Override
+            public void onOpened() {
+
+            }
+
+            @Override
+            public void onClosed() {
+
+            }
+        });
+        
+        interstitialDialog.loadBaconAd();
     }
 }
