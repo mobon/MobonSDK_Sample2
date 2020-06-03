@@ -6,7 +6,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
-|1.0.4.9|Bacon 배너 추가|
+|1.0.4.10|Bacon 배너 추가|
 |1.0.4.6|RectBannerView setExtractColor(),setOrderBrowser() 추가|
 |1.0.4.0|Criteo 미디에이션 추가|
 |1.0.3.75|Admixer 미디에이션 추가|
@@ -39,7 +39,7 @@
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('com.mobon.sdk:com.mobon.sdk:1.0.4.9') {
+  implementation('com.mobon.sdk:com.mobon.sdk:1.0.4.10') {
         transitive = true
     }
 }
