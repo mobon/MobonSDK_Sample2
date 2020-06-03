@@ -80,8 +80,9 @@ public class SampleInterstitialActivity extends Activity {
                     } else {
                         //기타 오류
                     }
-                    //바콘 광고를 추가로 하실 경우 실행하시기 바랍니다.
-                    // showBaconBanner();
+                   /////////////////////////////////////
+                    showBaconBanner(); // 바콘 배너 광고 진행시에만 호출바랍니다.
+                    /////////////////////////////////////
                 }
             }
 
