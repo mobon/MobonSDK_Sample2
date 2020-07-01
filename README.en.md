@@ -37,7 +37,7 @@ please use following instructions to integrate MOBON SDK with your Android APP.
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('com.mobon.sdk:com.mobon.sdk:1.0.4.0') {
+  implementation('com.mobon.sdk:com.mobon.sdk:1.0.4.10') {
         transitive = true
     }
 }
