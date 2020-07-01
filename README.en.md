@@ -6,6 +6,8 @@ please use following instructions to integrate MOBON SDK with your Android APP.
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
+|1.0.4.10|Bacon Banner Added|
+|1.0.4.6|RectBannerView setExtractColor(),setOrderBrowser() Added|
 |1.0.4.0|Adapter for Criteo network's Ads Added|
 |1.0.3.75|Adapter for Admixer network's Ads Added|
 |1.0.3.66|Rare CPU overload issue Fixed|
