@@ -6,7 +6,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
-|1.0.4.12|Adfit 전면 광고 변경|
+|1.0.4.13|Adfit 전면 광고 변경|
 |1.0.4.10|Bacon 배너 추가|
 |1.0.4.6|RectBannerView setExtractColor(),setOrderBrowser() 추가|
 |1.0.4.0|Criteo 미디에이션 추가|
