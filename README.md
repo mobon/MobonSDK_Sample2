@@ -40,7 +40,7 @@
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('com.mobon.sdk:com.mobon.sdk:1.0.4.12') {
+  implementation('com.mobon.sdk:com.mobon.sdk:1.0.4.13') {
         transitive = true
     }
 }
