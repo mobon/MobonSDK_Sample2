@@ -93,12 +93,12 @@ public class MainActivity extends Activity {
             @Override
             public void onClickEvent(Key.ENDING_KEYCODE event_code) {
                 switch (event_code) {
-                    case CLOSE:
-                        //종료 클릭
+                    case CLOSE: //종료 클릭
+                    case BACKKEY_CLOSE: // back Key                        
                         finish();
                         break;
                     case CANCLE:
-                        //닫기 클릭 또는 BackKey 시
+                        //닫기 클릭 
                         mEndingDialog.loadAd(); // 창 닫았을시 미리 로딩...
                         break;
                     case ADCLICK:
