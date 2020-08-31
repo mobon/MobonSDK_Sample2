@@ -190,6 +190,8 @@ InterstitialDialog interstitialDialog = new InterstitialDialog(this).setType(Key
             public void onLoadedAdInfo(boolean result, final String errorStr) {
                 if (result) {
                     //광고 성공     
+                    //전면 광고를 띄웁니다.    
+                    interstitialDialog.show();
                 } else {
                     //광고 실패 
                     System.out.println("onLoadedAdInfo fail" + errorStr);       
@@ -222,9 +224,7 @@ InterstitialDialog interstitialDialog = new InterstitialDialog(this).setType(Key
     //광고를 호출합니다
       interstitialDialog.loadAd();
       
-    //전면 광고를 띄웁니다.
-       if(interstitialDialog.isLoaded())
-           interstitialDialog.show();
+    
       
 
 ```
