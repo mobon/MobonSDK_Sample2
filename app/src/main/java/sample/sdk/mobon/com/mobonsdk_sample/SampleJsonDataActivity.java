@@ -35,7 +35,7 @@ public class SampleJsonDataActivity extends Activity {
     private ArrayList<AdItem> arrayList = new ArrayList<>();
     private ListView mListView;
     private MobonSDK mMobonSDK;
-    private String TEST_UNIT_ID = "18506"; // 모비온 테스트 UNIT_ID
+    private String TEST_UNIT_ID = "432394"; // 모비온 테스트 UNIT_ID
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
