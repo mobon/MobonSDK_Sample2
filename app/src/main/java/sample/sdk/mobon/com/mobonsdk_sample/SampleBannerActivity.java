@@ -16,7 +16,7 @@ import com.mobon.sdk.callback.iMobonBannerCallback;
 public class SampleBannerActivity extends Activity {
     private RectBannerView rectBannerView;
     private LinearLayout bannerContainer;
-    private String TEST_UNIT_ID = "18506"; // 모비온 테스트 UNIT_ID
+    private String TEST_UNIT_ID = "432394"; // 모비온 테스트 UNIT_ID
     private String TEST_BACON_UNIT_ID = "373386"; // 모비온 테스트 바콘 UNIT_ID
 
     @Override
