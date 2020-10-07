@@ -18,7 +18,7 @@ import com.mobon.sdk.callback.iMobonInterstitialAdCallback;
 public class SampleInterstitialActivity extends Activity {
 
     private InterstitialDialog mInterstitialDialog;
-    private String TEST_UNIT_ID = "18506"; // 모비온 테스트 UNIT_ID
+    private String TEST_UNIT_ID = "432394"; // 모비온 테스트 UNIT_ID
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
