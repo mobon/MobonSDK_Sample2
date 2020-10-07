@@ -33,6 +33,7 @@
 |Adfit|implementation 'com.mobon.sdk:adapter-adfit:0.9.0.14'|[연동가이드](adfit.md)|
 |Admixer|implementation 'com.mobon.sdk:adapter-admixer:0.9.2.6'|[연동가이드](admixer.md)|
 |Criteo|implementation 'com.mobon.sdk:adapter-criteo:0.9.0.10'|[연동가이드](criteo.md)|
+|Perpl|implementation 'com.mobon.sdk:adapter-perpl:0.9.0.4'|[연동가이드](perpl.md)|
  
  
 ## 1. Mobon SDK 기본설정
@@ -40,7 +41,7 @@
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('com.mobon.sdk:com.mobon.sdk:1.0.4.15') {
+  implementation('com.mobon.sdk:com.mobon.sdk:1.0.4.17') {
         transitive = true
     }
 }
