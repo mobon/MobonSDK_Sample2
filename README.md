@@ -6,7 +6,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
-|1.0.4.18|Perpl 미디에이션 추가|
+|1.0.4.19|Perpl 미디에이션 추가|
 |1.0.4.15|Adfit 전면 광고 변경|
 |1.0.4.10|Bacon 배너 추가|
 |1.0.4.6|RectBannerView setExtractColor(),setOrderBrowser() 추가|
@@ -34,7 +34,7 @@
 |Adfit|implementation 'com.mobon.sdk:adapter-adfit:0.9.0.15'|[연동가이드](adfit.md)|
 |Admixer|implementation 'com.mobon.sdk:adapter-admixer:0.9.2.6'|[연동가이드](admixer.md)|
 |Criteo|implementation 'com.mobon.sdk:adapter-criteo:0.9.0.10'|[연동가이드](criteo.md)|
-|Perpl|implementation 'com.mobon.sdk:adapter-perpl:0.9.0.4'|[연동가이드](perpl.md)|
+|Perpl|implementation 'com.mobon.sdk:adapter-perpl:0.9.0.6'|[연동가이드](perpl.md)|
  
  
 ## 1. Mobon SDK 기본설정
@@ -42,7 +42,7 @@
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('com.mobon.sdk:com.mobon.sdk:1.0.4.18') {
+  implementation('com.mobon.sdk:com.mobon.sdk:1.0.4.19') {
         transitive = true
     }
 }
