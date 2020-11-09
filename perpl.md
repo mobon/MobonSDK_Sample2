@@ -18,7 +18,7 @@
  ```XML
 dependencies {
   ...
-  implementation ('com.mobon.sdk:adapter-perpl:0.9.0.6'){
+  implementation ('com.mobon.sdk:adapter-perpl:0.9.0.7'){
         exclude group: 'com.google.android.gms'
     }
   ...
