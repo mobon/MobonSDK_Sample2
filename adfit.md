@@ -28,17 +28,10 @@
  ```XML
 dependencies {
   ...
-  implementation 'com.mobon.sdk:adapter-adfit:0.9.0.15' 
+  implementation 'com.mobon.sdk:adapter-adfit:0.9.0.17' 
   ...
 }
 ```
-
-**  전면 광고 설정
- ```XML
-Adfit 광고 사이즈 250x250 일 경우 INTERSTITIAL_TYPE.MEDIATION_ADFIT_SMALL 로 설정해야 합니다.
-Adfit Native 광고 일 경우 INTERSTITIAL_TYPE.FULL 또는 INTERSTITIAL_TYPE.MEDIATION_NORMAL 로 설정해야 합니다.
-```
-
    
 **  Progaurd 난독화 시 아래와 같이 예외 처리합니다.
  ```java
