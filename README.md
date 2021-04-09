@@ -39,6 +39,19 @@
  
 ## 1. Mobon SDK 기본설정
 
+- project build.gradle 에 mavenCentral() 을 추가합니다.
+
+```XML
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+}
+```
+
+- app build.gradle 에 mobonSDk 라이브러리를 추가합니다.
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
