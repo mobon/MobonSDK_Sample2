@@ -47,7 +47,7 @@
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('io.github.mobon:mobonSDK:1.0.0.0') {
+  implementation('io.github.mobon:mobonSDK:1.0.0.1') {
         transitive = true
     }
 }
