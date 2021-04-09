@@ -8,7 +8,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
-|1.0.0.0|라이브러리 저장소 변경 작업|
+|1.0.0.1|라이브러리 저장소 변경 작업|
 |1.0.5.6|안정화 작업|
 |1.0.4.27|Perpl 미디에이션 추가|
 |1.0.4.15|Adfit 전면 광고 변경|
