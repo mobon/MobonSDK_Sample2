@@ -14,11 +14,6 @@
 |1.0.4.15|Adfit 전면 광고 변경|
 |1.0.4.10|Bacon 배너 추가|
 |1.0.4.6|RectBannerView setExtractColor(),setOrderBrowser() 추가|
-|1.0.4.0|Criteo 미디에이션 추가|
-|1.0.3.75|Admixer 미디에이션 추가|
-|1.0.3.66|특정상황에서 cpu 과부하 현상 수정|
-|1.0.3.59|미디에이션 안정화|
-
 
 
 ## 개발환경
