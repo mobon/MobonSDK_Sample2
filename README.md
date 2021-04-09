@@ -3,9 +3,12 @@
 모비온 SDK 를 이용하여 모비온 광고를 노출하는 방법을 제공하고 있습니다.  
 또한 기타 광고 플랫폼을 이용하여 미디에이션 기능을 사용하는 방법을 제공합니다.
 
+* [Mobon SDK 의 라이브러리 주소가 변경되었습니다.]
+
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
+|1.0.0.0|라이브러리 저장소 변경 작업|
 |1.0.5.6|안정화 작업|
 |1.0.4.27|Perpl 미디에이션 추가|
 |1.0.4.15|Adfit 전면 광고 변경|
@@ -44,7 +47,7 @@
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('com.mobon.sdk:com.mobon.sdk:1.0.5.6') {
+  implementation('io.github.mobon:mobonSDK:1.0.0.0') {
         transitive = true
     }
 }
