@@ -19,7 +19,7 @@ dependencies {
   ...
   implementation 'com.google.android.gms:play-services-ads-identifier:16.0.0'
   implementation 'com.google.android.gms:play-services-base:16.0.1'
-  implementation 'com.mobon.sdk:adapter-criteo:0.9.0.10'
+  implementation 'io.github.mobon:adapter-criteo:1.0.1'
   ...
 }
 ```
