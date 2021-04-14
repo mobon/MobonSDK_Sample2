@@ -32,9 +32,9 @@
 |플랫폼|LATEST SDK VERSION|가이드|
 |---|:---:|:---:|
 |Adfit|implementation 'io.github.mobon:adapter-adfit:1.0.3'|[연동가이드](adfit.md)|
-|Admixer|implementation 'com.mobon.sdk:adapter-admixer:0.9.2.6'|[연동가이드](admixer.md)|
+|Admixer|implementation 'io.github.mobon:adapter-admixer:1.0.0'|[연동가이드](admixer.md)|
 |Criteo|implementation 'io.github.mobon:adapter-criteo:1.0.1'|[연동가이드](criteo.md)|
-|Perpl|implementation 'com.mobon.sdk:adapter-perpl:0.9.0.8'|[연동가이드](perpl.md)|
+|Perpl|implementation 'io.github.mobon:adapter-perpl:1.0.0'|[연동가이드](perpl.md)|
  
  
 ## 1. Mobon SDK 기본설정
