@@ -41,7 +41,7 @@
  ```XML
 dependencies {
   ...
-  implementation 'com.mobon.sdk:adapter-adfit:0.9.0.26' 
+  implementation 'io.github.mobon:adapter-adfit:1.0.3' 
   ...
 }
 ```
