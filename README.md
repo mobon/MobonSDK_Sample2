@@ -31,7 +31,7 @@
 
 |플랫폼|LATEST SDK VERSION|가이드|
 |---|:---:|:---:|
-|Adfit|implementation 'com.mobon.sdk:adapter-adfit:0.9.0.26'|[연동가이드](adfit.md)|
+|Adfit|implementation 'io.github.mobon:adapter-adfit:1.0.3'|[연동가이드](adfit.md)|
 |Admixer|implementation 'com.mobon.sdk:adapter-admixer:0.9.2.6'|[연동가이드](admixer.md)|
 |Criteo|implementation 'com.mobon.sdk:adapter-criteo:0.9.0.10'|[연동가이드](criteo.md)|
 |Perpl|implementation 'com.mobon.sdk:adapter-perpl:0.9.0.8'|[연동가이드](perpl.md)|
@@ -55,7 +55,7 @@ allprojects {
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('io.github.mobon:mobonSDK:1.0.0.1') {
+  implementation('io.github.mobon:mobonSDK:1.0.0.2') {
         transitive = true
     }
 }
