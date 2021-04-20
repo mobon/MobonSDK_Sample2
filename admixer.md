@@ -19,7 +19,7 @@
  ```XML
 dependencies {
   ...
-  implementation 'io.github.mobon:adapter-admixer:1.0.0'
+  implementation 'io.github.mobon:adapter-admixer:1.0.1'
   ...
 }
 ```
