@@ -8,13 +8,8 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
+|1.0.0.3|Script AD UI 변경|
 |1.0.0.2|라이브러리 저장소 변경 작업|
-|1.0.5.6|안정화 작업|
-|1.0.4.27|Perpl 미디에이션 추가|
-|1.0.4.15|Adfit 전면 광고 변경|
-|1.0.4.10|Bacon 배너 추가|
-|1.0.4.6|RectBannerView setExtractColor(),setOrderBrowser() 추가|
-
 
 ## 개발환경
 - 최소 SDK Version : Android 14
@@ -55,7 +50,7 @@ allprojects {
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('io.github.mobon:mobonSDK:1.0.0.2') {
+  implementation('io.github.mobon:mobonSDK:1.0.0.3') {
         transitive = true
     }
 }
