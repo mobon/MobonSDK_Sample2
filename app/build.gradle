@@ -56,7 +56,7 @@ dependencies {
     
     //미디에이션 추가시
     implementation 'io.github.mobon:adapter-adfit:1.0.2'
-    implementation 'io.github.mobon:adapter-admixer:1.0.0'
+    implementation 'io.github.mobon:adapter-admixer:1.0.1'
     implementation 'io.github.mobon:adapter-criteo:1.0.1'
     implementation ('io.github.mobon:adapter-perpl:1.0.0'){
         exclude group: 'com.google.android.gms'
