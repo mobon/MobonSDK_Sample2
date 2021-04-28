@@ -435,6 +435,7 @@ private MobonSDK mMobonSDK;
 |pcode|string|광고 상품코드 : 빈값일 경우 베이스 광고 , 아닐 경우 타게팅 광고|
 |pnm|string|상품 일 경우 상품명, 상품이 아닐 경우 광고명|
 |price|string|상품 일 경우 상품가격, 아닐경우 빈값|
+|advrtsReplcCode|string|"02"일 경우 price 가 숫자가 아닌 "바로가기" 로 넘어옴|
 |img|string|대표 광고 이미지 url |
 |mimg_W_H|string|사이즈별 이미지 url, 비타게팅 광고일 경우만 넘어옴 |
 |purl|string|광고 landing url |
