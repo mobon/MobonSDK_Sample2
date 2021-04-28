@@ -428,19 +428,19 @@ private MobonSDK mMobonSDK;
 |name|type|description|
 |---|:---:|:---:|
 |client|string|MOBON에서 반환한 JSON 패킷 PREPIX|
-|target|string|광고 구분 : AD(베이스) 그외는 타게팅 광고|
+|target|string|광고 구분 : AD(베이스)|
 |length|int|광고 개수|
-|logo|string|광고 로고|
+|logo2|string|광고 로고|
 |img_logo|string|광고 아이콘|
 |mobonLogo|string|Mobon 로고|
-|pcode|string|광고 상품코드|
+|pcode|string|광고 상품코드 : 빈값일 경우 베이스 광고 , 아닐 경우 타게팅 광고|
 |pnm|string|상품 일 경우 상품명, 상품이 아닐 경우 광고명|
 |price|string|상품 일 경우 상품가격, 아닐경우 빈값|
 |img|string|대표 광고 이미지 url |
 |mimg_W_H|string|사이즈별 이미지 url, 비타게팅 광고일 경우만 넘어옴 |
 |purl|string|광고 landing url |
 |increaseViewKey|string|광고 노출키 |
-|site_desc|string|광고 소개글 |
+|desc|string|광고 소개글 |
 
 
 ## 기타 옵션
