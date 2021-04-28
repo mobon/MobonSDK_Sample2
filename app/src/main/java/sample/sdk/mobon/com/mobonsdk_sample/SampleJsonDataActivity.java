@@ -225,6 +225,11 @@ public class SampleJsonDataActivity extends Activity {
                     title = objData.getString("pnm");
                     desc = objData.getString("site_desc1");
                     price = objData.getString("price");
+                    
+                     String advrtsReplcCode = objData.getString("advrtsReplcCode");
+                    if (!advrtsReplcCode.equals("02"))
+                        price += "원";  
+                        
                     imgUrl = objData.getString("img");
                 }
 
