@@ -428,7 +428,6 @@ private MobonSDK mMobonSDK;
 |name|type|description|
 |---|:---:|:---:|
 |client|string|MOBON에서 반환한 JSON 패킷 PREPIX|
-|target|string|광고 구분 : AD(베이스)|
 |length|int|광고 개수|
 |logo2|string|광고 로고|
 |img_logo|string|광고 아이콘|
