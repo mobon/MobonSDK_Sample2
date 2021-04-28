@@ -224,7 +224,7 @@ public class SampleJsonDataActivity extends Activity {
                     isAD = false;
                     title = objData.getString("pnm");
                     desc = objData.getString("site_desc1");
-                    price = objData.getString("price") + "원";
+                    price = objData.getString("price");
                     imgUrl = objData.getString("img");
                 }
 
