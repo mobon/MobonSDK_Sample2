@@ -26,7 +26,7 @@
 
 |플랫폼|LATEST SDK VERSION|가이드|
 |---|:---:|:---:|
-|Adfit|implementation 'io.github.mobon:adapter-adfit:1.0.3'|[연동가이드](adfit.md)|
+|Adfit|implementation 'io.github.mobon:adapter-adfit:1.0.5'|[연동가이드](adfit.md)|
 |Admixer|implementation 'io.github.mobon:adapter-admixer:1.0.1'|[연동가이드](admixer.md)|
 |Criteo|implementation 'io.github.mobon:adapter-criteo:1.0.1'|[연동가이드](criteo.md)|
 |Perpl|implementation 'io.github.mobon:adapter-perpl:1.0.0'|[연동가이드](perpl.md)|
