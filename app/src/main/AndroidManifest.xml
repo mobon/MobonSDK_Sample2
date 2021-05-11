@@ -52,6 +52,12 @@
             android:name=".SampleInterstitialActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"/>
+        
+         <!-- NativeAdView 샘플코드 -->
+        <activity
+            android:name=".SampleNativeActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"></activity>
 
         <!-- 광고 데이터 처리 샘플코드 -->
         <activity
