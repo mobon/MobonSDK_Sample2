@@ -8,7 +8,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
-|1.0.0.8|Script AD UI 변경|
+|1.0.0.9|Script AD UI 변경|
 |1.0.0.2|라이브러리 저장소 변경 작업|
 
 ## 개발환경
@@ -50,7 +50,7 @@ allprojects {
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('io.github.mobon:mobonSDK:1.0.0.8') {
+  implementation('io.github.mobon:mobonSDK:1.0.0.9') {
         transitive = true
     }
 }
