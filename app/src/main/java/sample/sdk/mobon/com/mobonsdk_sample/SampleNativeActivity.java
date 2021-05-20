@@ -30,11 +30,11 @@ public class SampleNativeActivity extends Activity {
 
         NativeAdView nativeView = new NativeAdView(this, container)
                 .setUnitId(TEST_UNIT_ID)
-                .setAdLogoView(logoImageView)
-                .setTitleView(titleView)
-                .setDescritionView(descView)
-                .setAdPriceView(priceView)
-                .setAdImageView(ContentImageView);
+                .setAdLogoView(logoImageView) //광고주 로고
+                .setTitleView(titleView) // 상품명
+                .setDescritionView(descView) // 상품설명
+                .setAdPriceView(priceView) // 상품 가격
+                .setAdImageView(ContentImageView); //상품 이미지
 
 
         nativeView.setAdListener(new iMobonNativeCallback() {
