@@ -6,7 +6,6 @@
 - 최소 SDK Version : Android 14
 - Compile SDK : Android 28 이상
 - Build Tool : Android Studio 
-- Activity Context 를 요구
 
 |지원 광고 타입|
 |---:|
