@@ -8,7 +8,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
-|1.0.0.12|IGAWORK Adapter 추가|
+|1.0.0.15|IGAWORK Adapter 추가|
 |1.0.0.12|script, auid 안정화|
 |1.0.0.10|Script AD UI 변경|
 |1.0.0.2|라이브러리 저장소 변경 작업|
