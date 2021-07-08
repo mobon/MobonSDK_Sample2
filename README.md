@@ -131,47 +131,6 @@ rv.setAdListener(new iMobonBannerCallback() {
 
 ```
 
-##바콘(바탕화면 아이콘) 띠 배너 
-
-** 바콘 배너에 대해
- - 배너를 클릭시 광고 사이트로 이동하며 바로가기를 추가적으로 설치를 유도합니다. 
-   유저의 바로가기 추가로 인해 앱 사용시가 아니더라도 지속적인 수익창출이 가능합니다.
-
-```java
-
-LinearLayout banner_container = findViewById(R.id.banner_container);
-// 발급받은 BACON 용 UNIT_ID 값을 필수로 넣어주어야 합니다.
-RectBannerView rv = new RectBannerView(this,BannerType.BANNER_320x50).setBannerUnitId(BACON_UNIT_ID); 
-
-// 배너뷰의 리스너를 등록합니다.
-rv.setAdListener(new iMobonBannerCallback() {
-            @Override
-            public void onLoadedAdInfo(boolean result, String errorcode) {
-                if (result) {
-                    //배너 광고 로딩 성공
-                    System.out.println("바콘배너 광고로딩");
-                     // 광고를 띄우고자 하는 layout 에 배너뷰를 삽입합니다.
-                       banner_container.addView(rv);
-
-                } else {
-                
-                    System.out.println("광고실패 : " + errorcode);
-                    rv.destroyAd();
-                    rv = null;
-                }
-            }
-
-            @Override
-            public void onAdClicked() {
-                System.out.println("광고클릭");
-            }
-        });       
-        
-        // 광고를 호출합니다.
-        rv.loadBaconAd();
-
-```
-
 ###배너 광고 사이즈별 타입
  
  |Size in DP (W X H)|Description|AdType Constant|
