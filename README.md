@@ -11,7 +11,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
-|1.0.0.30|구글 정책에 따른 안정화|
+|1.0.0.33|구글 정책에 따른 안정화|
 |1.0.0.19|앱 수집 관련 코드 삭제|
 |1.0.0.18|IGAWORK Adapter 추가|
 |1.0.0.12|script, auid 안정화|
@@ -58,7 +58,7 @@ allprojects {
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('io.github.mobon:mobonSDK:1.0.0.30') {
+  implementation('io.github.mobon:mobonSDK:1.0.0.33') {
         transitive = true
     }
 }
@@ -419,6 +419,8 @@ private MobonSDK mMobonSDK;
   
   - setOrderBrowser(List<string>) : 광고 클릭시 호출되는 브라우저의 순서를 정할 수 있습니다.
   (ex) mobonSDK.setOrderBrowser(Arrays.asList("com.sec.android.app.sbrowser", "com.android.chrome")); //1순위 삼성브라우저, 2순위 크롬
+  
+  - setAgeKids(boolean is) : 14세 미만일 경우 true 넣어주세요. 구글정책에 따른 아동에 대한 광고를 제한을 합니다.
 
 
 ## 주의 사항
