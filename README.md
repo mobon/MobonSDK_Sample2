@@ -11,7 +11,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
-|1.0.0.41|구글 정책에 따른 안정화|
+|1.0.0.42|구글 정책에 따른 안정화|
 |1.0.0.19|앱 수집 관련 코드 삭제|
 |1.0.0.18|IGAWORK Adapter 추가|
 |1.0.0.12|script, auid 안정화|
@@ -58,7 +58,7 @@ allprojects {
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('io.github.mobon:mobonSDK:1.0.0.41') {
+  implementation('io.github.mobon:mobonSDK:1.0.0.42') {
         transitive = true
     }
 }
