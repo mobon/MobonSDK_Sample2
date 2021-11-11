@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
 
     defaultConfig {
         applicationId "sample.sdk.mobon.com.mobonsdk_sample"
         minSdkVersion 19
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         //  multiDexEnabled true
@@ -29,8 +29,8 @@ android {
         abortOnError true
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     configurations.all {
@@ -50,7 +50,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'com.github.bumptech.glide:glide:3.7.0'
-    implementation('io.github.mobon:mobonSDK:1.0.0.42') {
+    implementation('io.github.mobon:mobonSDK:1.0.0.43') {
         transitive = true
     }
     
