@@ -60,7 +60,7 @@ dependencies {
 }
 ```
 
-** Android 9 (Pie) 업데이트에 따른 추가설정
+** Android 버전에 따른 추가설정
 
 - targetSdkVersion 28 부터 네트워크 통신 시 암호화 되지 않은 HTTP통신이 차단되도록 기본설정이
 변경되었습니다. SDK 내 모든 미디에이션 광고가 정상동작하기 위해서는 HTTP 통신을 허용해주셔야 하며, 방법은 아래와 같습니다.
@@ -79,7 +79,7 @@ android:usesCleartextTraffic="true"
 </manifest>
 ```
 - targetSdkVersion 31(Android 12)로 업데이트하는 앱은 다음과 같이 매니페스트 파일에서 Google Play 서비스 일반 권한을 선언해야 합니다.
-- 
+ 
 ```
 <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
 ```
