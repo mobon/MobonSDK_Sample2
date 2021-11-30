@@ -78,7 +78,7 @@ android:usesCleartextTraffic="true"
 </application>
 </manifest>
 ```
-- targetSdkVersion 31(Android 12)로 업데이트하는 앱은 다음과 같이 매니페스트 파일에서 Google Play 서비스 일반 권한을 선언해야 합니다.
+- targetSdkVersion 31(Android 12)로 업데이트하는 앱은 다음과 같이 AndroidManifest.xml 에서 Google Play 서비스 일반 권한을 선언해야 합니다.
  
 ```
 <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
