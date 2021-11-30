@@ -3,11 +3,6 @@
 모비온 SDK 를 이용하여 모비온 광고를 노출하는 방법을 제공하고 있습니다.  
 또한 기타 광고 플랫폼을 이용하여 미디에이션 기능을 사용하는 방법을 제공합니다.
 
-* [Mobon SDK 의 라이브러리 주소가 변경되었습니다.]
-* 구글플레이의 정책 변경에 따라 SDK 내 앱 정보 수집 관련하여 1.0.0.2 버전부터 처리 하였으나 관련 기능에 대한 경고가 나오고 있습니다.
-  1.0.0.19 버전에서 관련 기능 소스 삭제 및 보완 작업이 되었으니 1.0.0.19 이상 업데이트 바랍니다.
-
-
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
@@ -83,6 +78,12 @@ android:usesCleartextTraffic="true"
 </application>
 </manifest>
 ```
+- targetSdkVersion 31(Android 12)로 업데이트하는 앱은 다음과 같이 매니페스트 파일에서 Google Play 서비스 일반 권한을 선언해야 합니다.
+- 
+```
+<uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+```
+
 
 ## 2. Mobon SDK 선언
 
