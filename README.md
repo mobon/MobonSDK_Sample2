@@ -6,7 +6,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
-|1.0.0.44|AD_ID permission 제거|
+|1.0.0.48|AD_ID permission 제거|
 |1.0.0.43|기능 안정화|
 |1.0.0.42|구글 정책에 따른 안정화|
 |1.0.0.19|앱 수집 관련 코드 삭제|
@@ -55,7 +55,7 @@ allprojects {
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation('io.github.mobon:mobonSDK:1.0.0.44') {
+  implementation('io.github.mobon:mobonSDK:1.0.0.48') {
         transitive = true
     }
 }
