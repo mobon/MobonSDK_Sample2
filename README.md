@@ -425,6 +425,8 @@ private MobonSDK mMobonSDK;
   (ex) mobonSDK.setOrderBrowser(Arrays.asList("com.sec.android.app.sbrowser", "com.android.chrome")); //1순위 삼성브라우저, 2순위 크롬
   
   - setAgeKids(boolean is) : 14세 미만일 경우 true 넣어주세요. 구글정책에 따른 아동에 대한 광고를 제한을 합니다.
+ 
+  - setBackCancel(true) : 설정시 전면광고를 backKey 로 종료할 수 있습니다.
 
 
 ## 주의 사항
