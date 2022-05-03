@@ -35,7 +35,7 @@
 |Admixer|implementation 'io.github.mobon:adapter-admixer:1.0.1'|[연동가이드](admixer.md)|
 |Criteo|implementation 'io.github.mobon:adapter-criteo:1.0.1'|[연동가이드](criteo.md)|
 |Perpl|implementation 'io.github.mobon:adapter-perpl:1.0.0'|[연동가이드](perpl.md)|
-|Igawork|implementation 'io.github.mobon:adapter-igaw:0.9.0'|[연동가이드](igaw.md)|
+|AdPopcorn SSP|implementation 'io.github.mobon:adapter-igaw:0.9.0'|[연동가이드](igaw.md)|
  
  
 ## 1. Mobon SDK 기본설정
