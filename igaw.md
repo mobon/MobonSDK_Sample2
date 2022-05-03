@@ -1,4 +1,4 @@
-# IGAWORK Mediation SDK
+# AdPopcorn SSP Mediation SDK
 
  미디에이션 기능을 사용하는 방법을 제공합니다.
 
