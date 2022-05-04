@@ -6,7 +6,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
-|1.0.0.52|기능 안정화|
+|1.0.0.54|기능 안정화|
 |1.0.0.52|전면광고 backPress 종료 금지|
 |1.0.0.48|AD_ID permission 제거|
 |1.0.0.43|기능 안정화|
