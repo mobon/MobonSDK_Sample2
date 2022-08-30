@@ -50,6 +50,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'com.github.bumptech.glide:glide:3.7.0'
+    
+    //mobon sdk 
     implementation('io.github.mobon:mobonSDK:1.0.0.55') {
         transitive = true
     }
