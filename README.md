@@ -89,6 +89,7 @@ android:usesCleartextTraffic="true"
 
 ## 2. Mobon SDK 선언
 
+-java
 ```java
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +101,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 ```
 
-kotlin
+-kotlin
 ```kotlin
  override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -111,7 +112,7 @@ kotlin
 
 ## 띠 배너 
 
-
+-java
 ```java
 
 LinearLayout banner_container = findViewById(R.id.banner_container);
@@ -146,6 +147,42 @@ rv.setAdListener(new iMobonBannerCallback() {
         
         // 광고를 호출합니다.
         rv.loadAd();
+
+```
+
+-kotlin
+```kotlin
+
+val banner_container = findViewById<LinearLayout>(R.id.banner_container)
+
+        // 각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
+        var rectBannerView =
+            RectBannerView(this, BannerType.BANNER_320x50).setBannerUnitId(UNIT_ID)
+
+        rectBannerView.let {
+            // 배너뷰의 리스너를 등록합니다.
+            it.setAdListener(object : iMobonBannerCallback {
+                override fun onLoadedAdInfo(result: Boolean, errorcode: String) {
+                    if (result) {
+                        //배너 광고 로딩 성공
+                        println("배너 광고로딩")
+                        // 광고를 띄우고자 하는 layout 에 배너뷰를 삽입합니다.
+                        banner_container.addView(it)
+                    } else {
+                        println("광고실패 : $errorcode")
+                        it.destroyAd()
+                    }
+                }
+
+                override fun onAdClicked() {
+                    println("광고클릭")
+                }
+            })
+
+            // 광고를 호출합니다.
+            it.loadAd()
+
+        }
 
 ```
 
