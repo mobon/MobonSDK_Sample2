@@ -441,6 +441,7 @@ mEndingDialog.setAdListener(new iMobonEndingPopupCallback() {
  - 광고 타입은 일반 광고와 타게팅 광고로 구분되어 있으니 샘플 프로젝트를 참고 하시어 두개의 레이아웃을 구성하여 주세요.
  - 원활한 광고의 노출을 확인 및 클릭시 사이트 호출 기능이 제대로 동작하는지를 위하여 모비온 담당자의 검수가 필요합니다.
  
+ - java
  ```java
 private MobonSDK mMobonSDK;
 
@@ -480,8 +481,40 @@ private MobonSDK mMobonSDK;
              }
        }); 
 
+```
+
+- kotlin
+``` kotlin
+ val mobonSDK = MobonSDK(this, "YOUR_MEDIA_CODE") //두번째 인자에 발급받은 미디어코드로 수정하세요.
+
+//두번째 인자 : 받을 광고의 개수 
+//세번째 인자 : 발급받은 UnitId 로 교체하세요.
+//네번째 인자 : 광고 호출 callback Listener
+        mobonSDK.getMobonAdData(this, 1, "unitId",
+            iMobonAdCallback { result, objData, errorStr ->
+                if (result) {
+                    try {
+                        val jObj = objData.getJSONArray("client").getJSONObject(0)
+                        val jArray = jObj.getJSONArray("data")
+                        val length = jObj.getInt("length")
+                        val AdType = jObj.getString("target")
+                        for (i in 0 until length) {
+                            val item = AdItem(AdType, jArray.getJSONObject(i))
+                            //광고 데이터 처리...
+                        }
+                    } catch (e: JSONException) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace()
+                    }
+                } else {
+                    if (errorStr == Key.NOFILL) { //광고 없음
+                    } else { //통신 오류
+                    }
+                }
+            })
 
 ```
+
 ** sample Project 의 SampleJsonDataActivity 를 참조하세요.
 
 ### 광고 데이터 Response parameter
