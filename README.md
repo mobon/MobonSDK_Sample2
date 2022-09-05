@@ -205,7 +205,7 @@ val banner_container = findViewById<LinearLayout>(R.id.banner_container)
    
 ## 전면 배너 
 
-
+-java
 ```java
 
 //전면 배너를 선언하시고 발급받은 UnitId 로 교체하세요.
@@ -249,62 +249,49 @@ InterstitialDialog interstitialDialog = new InterstitialDialog(this).setType(Key
         });  
     
     //광고를 호출합니다
-      interstitialDialog.loadAd();
-      
+      interstitialDialog.loadAd();    
     
-      
 
 ```
 
-##바콘 전면 배너 
+-kotlin
+```kotlin
+  //전면 배너를 선언하시고 발급받은 UnitId 로 교체하세요.
+        val interstitialDialog =
+            InterstitialDialog(this).setType(Key.INTERSTITIAL_TYPE.NORMAL).setUnitId(YOUR_UNIT_ID)
+                .build()
 
-```java
-
-LinearLayout banner_container = findViewById(R.id.banner_container);
-// 발급받은 BACON 용 UNIT_ID 값을 필수로 넣어주어야 합니다.
-InterstitialDialog interstitialDialog = new InterstitialDialog(this).setType(Key.INTERSTITIAL_TYPE.NORMAL).setUnitId(BACON_UNIT_ID).build(); 
-
- //전면 배너 리스너를 등록합니다.
- interstitialDialog.setAdListener(new iMobonInterstitialAdCallback() {
-            @Override
-            public void onLoadedAdInfo(boolean result, final String errorStr) {
-                if (result) {
-                    //광고 성공     
-                } else {
-                    //광고 실패 
-                    System.out.println("onLoadedAdInfo fail" + errorStr);       
+        //전면 배너 리스너를 등록합니다.
+        interstitialDialog.let {
+            it.setAdListener(object : iMobonInterstitialAdCallback {
+                override fun onLoadedAdInfo(result: Boolean, errorStr: String) {
+                    if (result) {
+                        //광고 성공
+                        //전면 광고를 띄웁니다.
+                        it.show()
+                    } else {
+                        //광고 실패
+                        println("onLoadedAdInfo fail $errorStr")
+                    }
                 }
-            }
-            
-           @Override
-            public void onClickEvent(Key.INTERSTITIAL_KEYCODE event_code) {
-                if (event_code == Key.INTERSTITIAL_KEYCODE.CLOSE) {
-//                    if (interstitialDialog != null)
-//                        interstitialDialog.loadAd();
-                } else if (event_code == Key.INTERSTITIAL_KEYCODE.ADCLICK) {
-                    System.out.println("Interstitial Ad Click");
-                    if (interstitialDialog != null)
-                        interstitialDialog.close();
+
+                override fun onClickEvent(event_code: Key.INTERSTITIAL_KEYCODE) {
+                    when(event_code){
+                        Key.INTERSTITIAL_KEYCODE.CLOSE ->
+                            println("Interstitial Ad Close")
+                        Key.INTERSTITIAL_KEYCODE.ADCLICK ->{
+                            println("Interstitial Ad Click")
+                            it?.close()
+                        }                          
+                    }                    
                 }
-            }
+                override fun onOpened() {}
+                override fun onClosed() {}
+            })
 
-            @Override
-            public void onOpened() {
-
-            }
-
-            @Override
-            public void onClosed() {
-
-            }
-        });  
-    
-    ///바콘 광고를 호출합니다
-      interstitialDialog.loadBaconAd();
-      
-    //전면 광고를 띄웁니다.
-       if(interstitialDialog.isLoaded())
-           interstitialDialog.show();
+            //광고를 호출합니다
+            it.loadAd()
+        }
 
 ```
 
@@ -319,6 +306,7 @@ InterstitialDialog interstitialDialog = new InterstitialDialog(this).setType(Key
 
 
 ## 엔딩 배너 
+- java
 ```java
 
 private EndingDialog mEndingDialog;
@@ -346,7 +334,7 @@ mEndingDialog.setAdListener(new iMobonEndingPopupCallback() {
                         //종료 클릭
                         finish();
                         break;
-                    case CANCLE:
+                    case CANCEL:
                         //닫기 클릭 또는 BackKey 시
                         mEndingDialog.loadAd(); // 창 닫았을시 다시 로딩...
                         break;
@@ -382,6 +370,62 @@ mEndingDialog.setAdListener(new iMobonEndingPopupCallback() {
         super.onBackPressed();
     }
         
+```
+
+-kotlin
+```kotlin
+
+ private var mEndingDialog : EndingDialog? = null
+ 
+  override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+     ...
+       // 엔딩 배너를 선언하시고 발급받은 UnitId 로 교체하세요.
+        mEndingDialog =
+            EndingDialog(this).setType(Key.ENDING_TYPE.NORMAL).setUnitId(TEST_UNIT_ID).build()
+
+     
+            //엔딩 배너의 리스너를 등록합니다.
+            mEndingDialog?.setAdListener(object : iMobonEndingPopupCallback {
+                override fun onLoadedAdInfo(result: Boolean, errorStr: String) {
+                    if (result) {
+                        //광고 성공
+                    } else {
+                        //광고 실패
+                    }
+                }
+
+                override fun onClickEvent(event_code: ENDING_KEYCODE) {
+                    when (event_code) {
+                        ENDING_KEYCODE.CLOSE ->                         //종료 클릭
+                            finish()
+                        ENDING_KEYCODE.CANCEL ->                         //닫기 클릭 또는 BackKey 시
+                            mEndingDialog?.loadAd() // 창 닫았을시 다시 로딩...
+                        ENDING_KEYCODE.ADCLICK -> {}
+                    }
+                }
+
+                override fun onOpened() {}
+                override fun onClosed() {}
+            })
+            //광고를 호출합니다
+        mEndingDialog?.loadAd()    
+
+}
+
+ override fun onBackPressed() {
+   if (mEndingDialog?.isShowing() == false && mEndingDialog?.isLoaded() == true) {
+            mEndingDialog?.show()
+            return
+        } else {
+                // 앱 종료 or 타 엔딩팝업 처리...
+            finish()
+        }
+        
+        super.onBackPressed()
+ }
+
+
 ```
 
 ### 엔딩 배너 광고 사이즈별 타입
