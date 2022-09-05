@@ -100,6 +100,14 @@ protected void onCreate(Bundle savedInstanceState) {
 
 ```
 
+```kotlin
+ override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        MobonSDK(this, "YOUR_MEDIA_CODE") //두번째 인자에 발급받은 미디어코드로 수정하세요.
+ }
+```
+
 ## 띠 배너 
 
 
