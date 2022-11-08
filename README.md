@@ -6,7 +6,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
-|1.0.0.57|엔딩광고 폴드폰 UI 대응|
+|1.0.0.58|폴드폰 UI 대응|
 |1.0.0.55|기능 안정화|
 |1.0.0.52|전면광고 backPress 종료 금지|
 |1.0.0.48|AD_ID permission 변경|
@@ -57,7 +57,7 @@ allprojects {
 - app build.gradle 에 mobonSDK 라이브러리를 추가합니다.
 ```XML
 dependencies {  
-  implementation('io.github.mobon:mobonSDK:1.0.0.57') {
+  implementation('io.github.mobon:mobonSDK:1.0.0.58') {
         transitive = true
     }
 }
