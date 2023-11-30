@@ -6,6 +6,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
+|1.0.0.62|오류 수정|
 |1.0.0.61|UI 오류 수정|
 |1.0.0.60|일부 광고 UI 변경|
 |1.0.0.58|폴드폰 UI 대응|
@@ -59,7 +60,7 @@ allprojects {
 - app build.gradle 에 mobonSDK 라이브러리를 추가합니다.
 ```XML
 dependencies {  
-  implementation('io.github.mobon:mobonSDK:1.0.0.61') {
+  implementation('io.github.mobon:mobonSDK:1.0.0.62') {
         transitive = true
     }
 }
