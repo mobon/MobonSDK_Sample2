@@ -51,10 +51,15 @@ compileOptions {
 
 dependencies {
   ...
-  implementation 'io.github.mobon:adapter-adfit:1.0.7' 
+  implementation 'io.github.mobon:adapter-adfit:1.0.9'
+  implementation 'com.kakao.adfit:ads-base:3.13.6'
   ...
 }
 ```
+** AdfitSDK의 경우 3.13.6에 최적화 되어 있으나, 특별히 충돌이 발생하지 않는다면 다른 버전을 사용하셔도 무방합니다.
+
+
+
    
 **  Progaurd 난독화 시 아래와 같이 예외 처리합니다.
  ```java
