@@ -24,7 +24,7 @@
 
 ## 개발환경
 - 최소 SDK Version : Android 14
-- Compile SDK : Android 26 이상
+- Compile SDK : Android 34 이상
 - Build Tool : Android Studio 
 - androidX 권장
 
