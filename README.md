@@ -62,7 +62,7 @@ allprojects {
 - app build.gradle 에 mobonSDK 라이브러리를 추가합니다.
 ```XML
 dependencies {  
-  implementation('io.github.mobon:mobonSDK:1.0.0.62') {
+  implementation('io.github.mobon:mobonSDK:1.0.0.64') {
         transitive = true
     }
 }
