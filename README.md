@@ -6,6 +6,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
+|1.0.0.64|오류 수정|
 |1.0.0.63|오류 수정|
 |1.0.0.62|오류 수정|
 |1.0.0.61|UI 오류 수정|
