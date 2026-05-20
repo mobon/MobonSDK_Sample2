@@ -6,6 +6,7 @@
 # Mobon Android SDK Release History
  |version|Description|
 |---|:---:|
+|1.0.0.66|오류 수정|
 |1.0.0.65|오류 수정|
 |1.0.0.64|오류 수정|
 |1.0.0.63|오류 수정|
@@ -39,7 +40,7 @@
 
 |플랫폼|LATEST SDK VERSION|가이드|
 |---|:---:|:---:|
-|Adfit|implementation 'io.github.mobon:adapter-adfit:1.0.9'|[연동가이드](adfit.md)|
+|Adfit|implementation 'io.github.mobon:adapter-adfit:1.0.10'|[연동가이드](adfit.md)|
 |Admixer|implementation 'io.github.mobon:adapter-admixer:1.0.1'|[연동가이드](admixer.md)|
 |Criteo|implementation 'io.github.mobon:adapter-criteo:1.0.1'|[연동가이드](criteo.md)|
 |Perpl|implementation 'io.github.mobon:adapter-perpl:1.0.0'|[연동가이드](perpl.md)|
@@ -63,7 +64,7 @@ allprojects {
 - app build.gradle 에 mobonSDK 라이브러리를 추가합니다.
 ```XML
 dependencies {  
-  implementation('io.github.mobon:mobonSDK:1.0.0.65') {
+  implementation('io.github.mobon:mobonSDK:1.0.0.66') {
         transitive = true
     }
 }
